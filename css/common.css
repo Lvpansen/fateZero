@@ -222,7 +222,7 @@ footer {
     padding: 6px 0;
 }
 
-.footNav ul li:before {
+.footNav ul li a:before {
     content: '';
     display: inline-block;
     width: 4px;
@@ -234,8 +234,12 @@ footer {
     margin-right: 8px;
 }
 
-.footNav ul li>a:hover{
+.footNav ul li:hover>a{
     color:#66abff;
+}
+
+.footNav ul li:hover>a:before {
+    background:#66abff;
 }
 
 footer .bottomInfo {
