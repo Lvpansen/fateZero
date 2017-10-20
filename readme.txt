@@ -1,0 +1,1 @@
+I build these pages for helping my friend.

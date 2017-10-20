@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		html,body,p,ul,li,h1,h2,h3,h4,h5{
+			padding:0;
+			margin:0;
+		}
+		ul,li{
+			list-style: none;
+		}
+		a{
+			text-decoration: none;
+			color:#999;
+		}
+		header{
+			padding:0 15%;
+			position: relative;
+		}
+		header .container{
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			height: 60px;
+		}
+		.nav{
+			display: flex;
+			height: 60px;
+			align-items: center;
+		}
+		.nav li{
+			padding:0 8px;
+			margin:0 4px;
+			height: 100%;
+			display: flex;
+			align-items: center;
+			cursor: pointer;
+		}
+		.nav li .list{
+			width:100%;
+			height: 0px;
+			color:#fff;
+			background-color: rgba(0,0,0,0.7);
+			position: absolute;
+			left:0;
+			top:60px;
+			overflow: hidden;
+		}
+		.nav li:hover>a{
+			color:red;
+		}
+		.nav li:hover>.list{
+			transition: height .5s;
+			height: 150px;
+			/*top:60px;*/
+		}
+	</style>
+</head>
+<body>
+	<header>
+		<div class="container">
+			<div class="logo">LOGO</div>
+			<ul class="nav">
+				<li>
+					<a href="#">asdf</a>
+					<div class="list">
+						<p>12</p>
+						<p>23</p>
+						<p>23</p>
+						<p>34</p>
+						<p>65</p>
+					</div>
+				</li>
+				<li>
+					<a href="#">asfd</a>
+					<div class="list">
+						<p>124</p>
+						<p>253</p>
+						<p>236</p>
+						<p>374</p>
+						<p>655</p>
+					</div>
+				</li>
+				<li>
+					<a href="#">asfd</a>
+					<div class="list">
+						<p>112</p>
+						<p>223</p>
+						<p>423</p>
+						<p>347</p>
+						<p>655</p>
+					</div>
+				</li>
+			</ul>
+		</div>
+	</header>
+</body>
+</html>
