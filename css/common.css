@@ -2,6 +2,10 @@ a {
     color: #666;
 }
 
+a:hover{
+    text-decoration: underline;
+}
+
 header {
     padding: 0 15%;
     position: relative;
@@ -26,7 +30,17 @@ header .container {
     height: 100%;
     display: flex;
     align-items: center;
-    cursor: pointer;
+    /*cursor: pointer;*/
+}
+
+.nav .navLink:after{
+    content:'';
+    display: inline-block;
+    width:10px;
+    height: 10px;
+    margin-left: 8px;
+    background: url(../img/icon/arrow1.png) no-repeat center center;
+    background-size: contain;
 }
 
 .nav li .list {
@@ -38,10 +52,47 @@ header .container {
     left: 0;
     top: 60px;
     overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding:0 15%;
+}
+
+.nav .list>div{
+    flex: 1;
+    height: 130px;
+}
+ 
+.nav .list .intrList{
+    border-right:1px solid #666;
+}
+
+.nav .intrList>ul{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.nav .intrPic{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.nav .intrPic img{
+    max-height: 100%;
 }
 
 .nav li:hover>a {
     color: #79b2f2;
+}
+
+.nav li:hover>.navLink:after{
+    transform: rotate(90deg);
+    transition: transform .3s;
+    background: url(../img/icon/arrow2.png) no-repeat center center;
+    background-size: contain;
 }
 
 .nav li:hover>.list {
@@ -157,6 +208,11 @@ footer {
     padding-bottom: 6px;
 }
 
+.footNav>li:hover>h2{
+    border-color: #6ee65c;
+    color:#66abff;
+}
+
 .footNav ul {
     padding-top: 10px;
     padding-left: 12px;
@@ -176,6 +232,10 @@ footer {
     position: relative;
     top: -3px;
     margin-right: 8px;
+}
+
+.footNav ul li>a:hover{
+    color:#66abff;
 }
 
 footer .bottomInfo {
