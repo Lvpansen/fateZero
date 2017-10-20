@@ -1,0 +1,35 @@
+.spec{
+	padding-top: 30px;
+}
+.spec h2{
+	text-align: center;
+	color:#80b8ff;
+	font-size: 14px;
+}
+.spec h2 span{
+	display: inline-block;
+	padding:8px 0;
+}
+.spec h2 span:nth-of-type(1){
+	border-bottom: 1px solid #80b8ff;
+	font-size: 16px;
+}
+.spec .proPic{
+	text-align: center;
+	padding-top: 24px;
+}
+.aboutUs{
+	padding-top:30px;
+}
+.aboutUs h2{
+	text-align: center;
+}
+.aboutUs h2 span{
+	padding-bottom: 4px;
+	color:#80b8ff;
+	border-bottom: 1px dotted #80b8ff;
+	font-size: 14px;
+}
+.aboutUs .aboutPic{
+	padding-top: 12px;
+}
