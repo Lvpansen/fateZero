@@ -1,0 +1,13 @@
+
+.step{
+	padding-top:30px;
+}
+.step h2{
+	text-align: center;
+}
+.step h2 span{
+	padding-bottom: 4px;
+	color:#80b8ff;
+	border-bottom: 1px dotted #80b8ff;
+	font-size: 14px;
+}

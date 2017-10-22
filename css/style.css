@@ -18,6 +18,9 @@
 	text-align: center;
 	padding-top: 24px;
 }
+.spec .proPic img{
+	width:100%;
+}
 .aboutUs{
 	padding-top:30px;
 }
@@ -32,4 +35,7 @@
 }
 .aboutUs .aboutPic{
 	padding-top: 12px;
+}
+.aboutUs .aboutPic img{
+	width:100%;
 }
