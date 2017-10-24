@@ -1,0 +1,35 @@
+.product{
+	padding-top:30px;
+}
+.product h2{
+	text-align: center;
+}
+.product h2 span{
+	padding-bottom: 4px;
+	color:#80b8ff;
+	border-bottom: 1px dotted #80b8ff;
+	font-size: 14px;
+}
+.intrduction{
+	display: flex;
+	height: 240px;
+	margin-top: 50px;
+}
+.intrduction .intrChair{
+	flex:2;
+	height: 240px;
+}
+.intrChair img{
+	height:100%;
+}
+.intrduction>p{
+	height: 240px;
+	flex: 3;
+	line-height: 3;
+	text-align: center;
+	background: #739ae6;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	color:#fff;
+}
