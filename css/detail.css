@@ -15,11 +15,11 @@
 	height: 240px;
 	margin-top: 50px;
 }
-.intrduction .intrChair{
+.intrduction .intrDesk{
 	flex:2;
 	height: 240px;
 }
-.intrChair img{
+.intrDesk img{
 	height:100%;
 }
 .intrduction>p{
@@ -32,4 +32,28 @@
 	align-items: center;
 	justify-content: center;
 	color:#fff;
+}
+.deskList{
+	padding-top: 30px;
+}
+.deskList>li{
+	display: flex;
+}
+.deskList>li img{
+	border:1px solid #eee;
+}
+.deskList>li .deskIntr{
+	text-align:center;
+}
+.deskIntr h3{
+	line-height: 4;
+}
+.deskIntr p{
+	line-height: 2;
+}
+.deskList>li>div:hover img{
+	border:1px solid #a9e5a0;
+}
+.deskList>li>div:hover .deskIntr{
+	color:#5b8ae6;
 }
