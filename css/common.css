@@ -18,6 +18,13 @@ header .container {
     height: 60px;
 }
 
+.clear:after{
+    content: '';
+    display: block;
+    clear: both;
+    overflow: auto;
+}
+
 .nav {
     display: flex;
     height: 60px;

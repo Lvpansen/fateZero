@@ -57,3 +57,58 @@
 .deskList>li>div:hover .deskIntr{
 	color:#5b8ae6;
 }
+
+.chairList{
+	padding-top: 30px;
+}
+
+.chairList>li{
+	/*display: flex;*/
+	width:100%;
+}
+.chairList>li>div{
+	/*flex: 1;*/
+	width:25%;
+	float: left;
+	text-align: center;
+} 
+@media all and (max-width: 960px) {
+	.chairList>li>div{
+		width:50%;
+	}
+}
+.chairList>li img{
+	border:1px solid #eee;
+}
+.chairList>li>div>img{
+	width: 100%;
+}
+.chairList>li>div:hover img{
+	border:1px solid #a9e5a0;
+}
+.chairList .chairIntr{
+	padding:0 12px;
+}
+.chairList>li>div:hover .chairIntr{
+	color:#5b8ae6;
+}
+
+.chairList .chairIntr h3{
+	line-height: 3;
+}
+.chairList .chairIntr p{
+	line-height: 2;
+}
+
+.slideBox .hd ul{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.slideBox .hd ul li{
+	padding:12px;
+}
+.slideBox .hd li.on{
+	border:2px solid orange;
+}
