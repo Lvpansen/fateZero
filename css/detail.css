@@ -107,8 +107,13 @@
 }
 
 .slideBox .hd ul li{
+	width:160px;
 	padding:12px;
 }
-.slideBox .hd li.on{
+.slideBox .hd ul li img{
+	width:100%;
+	box-sizing: border-box;
+}
+.slideBox .hd li.on img{
 	border:2px solid orange;
 }
