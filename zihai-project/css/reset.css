@@ -1,0 +1,25 @@
+html,body,iframe,h1, h2, h3, h4, h5, h6, p, img,dl, dt, dd, ol, ul, li,video,input,textarea{
+	margin: 0;
+    padding: 0;
+    border: 0;
+}
+img{
+    border: 0;
+    vertical-align: middle;
+}
+a{
+    text-decoration: none;
+}
+input{
+    padding: 0;
+    border: 0;
+}
+input:-moz-placeholder,
+input::-webkit-input-placeholder,
+input:-ms-input-placeholder {
+    color: #999999;
+}
+ul,ol{
+    list-style-type:none;
+}
+li{list-style: none;}
