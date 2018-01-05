@@ -72,10 +72,14 @@ input:focus{
 	background-size: contain;
 	vertical-align: middle;
 }
+.footer{
+	background: #2d3645;
+}
 .footer>ul{
 	width:100%;
+	max-width: 2000px;
+	margin:0 auto;
 	height: 320px;
-	background: #2d3645;
 	padding:0 50px;
 	box-sizing: border-box;
 }
@@ -83,7 +87,7 @@ input:focus{
 	float: left;
 	width:33.33%;
 	height: 100%;
-	padding:30px 90px;
+	padding:30px 4%;
 	box-sizing: border-box;
 }
 .footerTitle{
@@ -115,7 +119,7 @@ input:focus{
 	line-height: 2.5;
 }
 .serverInfo .phoneNum{
-	font-size:34px;
+	font-size:32px;
 }
 li.onlineInfo{
 	position: relative;
@@ -151,13 +155,14 @@ li.onlineInfo input.btn{
 }
 li.qrCode>div{
 	float: left;
-	padding-top: 30px;
-}
-li.qrCode .qrCode1{
-	padding-right: 70px;
+    padding-top: 32px;
+    width: 50%;
+    box-sizing: border-box;
+    text-align: center;
 }
 li.qrCode>div img{
-	width: 160px;
+	width: 78%;
+	max-height: 210px;
 }
 li.qrCode>div p{
 	color: #fff;
