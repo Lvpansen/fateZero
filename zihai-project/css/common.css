@@ -71,6 +71,20 @@ input:focus{
 	background: url(../img/icon/server-icon.png) no-repeat center center;
 	background-size: contain;
 	vertical-align: middle;
+	position: relative;
+}
+span.serverPhone span{
+	position: absolute;
+	left:-10px;
+	top:30px;
+	width:120px;
+	padding-top: 6px;
+	line-height: 1.5;
+	z-index: 99;
+	visibility: hidden;
+}
+span.serverPhone:hover span{
+	visibility: visible;
 }
 .footer{
 	background: #2d3645;

@@ -1,0 +1,434 @@
+/*banner style*/
+.swiper-container{
+	width:100%;
+}
+.swiper-container .swiper-slide img{
+	width:100%;
+}
+.companyIntr{
+	width:100%;
+	background: #2d3645;
+}
+.companyIntr .intrCont{
+	width:1200px;
+	margin:0 auto;
+	color: #fff;
+	padding:30px 0;
+	position: relative;
+}
+.companyIntr .intrCont .intrInfo h3{
+	font-size: 20px;
+	font-weight: normal;
+	line-height: 2;
+}
+.companyIntr .intrCont .intrInfo p{
+	width:720px;
+	line-height: 1.5;
+	font-size: 14px;
+}
+.companyIntr .intrCont .more{
+	position: absolute;
+	right: 0;
+	top:50%;
+	margin-top: -20px;
+	height: 40px;
+	line-height: 40px;
+	padding: 0 30px;
+	background: #fff;
+	color:#333;
+	border-radius: 20px;
+	font-size: 14px;
+}
+/*advantage style*/
+.Advantage{
+	width: 1200px;
+	margin:0 auto;
+	padding-top: 32px;
+	color:#333;
+}
+h2.indexTitle{
+	text-align: center;
+	width:200px;
+	margin:0 auto;
+	color:#333;
+	border-bottom: 1px solid #333;
+	padding-bottom: 12px;
+}
+.border-bottom{
+	height: 4px;
+	width:36px;
+	margin: 0 auto;
+	background: #f23b37;
+	position: relative;
+	top:-2px;
+}
+.advanList{
+	width:100%;
+	padding-top: 32px;
+}
+.advanList li{
+	float: left;
+	width:24%;
+	border:1px solid #999;
+	margin:0 0.5%;
+	box-sizing: border-box;
+	padding:42px 30px;
+}
+.advanList li h3{
+	text-align: center;
+	line-height: 2;
+}
+.advanList li h3:before{
+	content: '';
+	display: block;
+	width:32px;
+	height: 32px;
+	margin:0 auto;
+}
+.advanList li.advantage1 h3:before{
+	background: url(../img/icon/advan-icon1.png) no-repeat center center;
+	background-size: contain;
+}
+.advanList li.advantage2 h3:before{
+	background: url(../img/icon/advan-icon2.png) no-repeat center center;
+	background-size: contain;
+}
+.advanList li.advantage3 h3:before{
+	background: url(../img/icon/advan-icon3.png) no-repeat center center;
+	background-size: contain;
+}
+.advanList li.advantage4 h3:before{
+	background: url(../img/icon/advan-icon4.png) no-repeat center center;
+	background-size: contain;
+}
+.advanList li p{
+	width:100%;
+	height: 170px;
+	padding: 16px 0;
+	box-sizing: border-box;
+	line-height: 1.5;
+	border-bottom: 1px solid #999;
+	text-align: justify;
+}
+.advanList li .detailBtn{
+	background: #f23b37;
+	width:100%;
+	text-align: center;
+	padding:12px 0;
+	color:#fff;
+	margin-top: 20px;
+	cursor: pointer;
+}
+.advanMask{
+	position: fixed;
+	top:0;
+	left:0;
+	z-index: 999;
+	width:100%;
+	height: 100%;
+	background: rgba(0,0,0,0.7);
+	display: none;
+}
+.advantageDetail{
+	width:70%;
+	height: 80%;
+	background: #fff;
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%,-50%);
+	padding: 16px 20px;
+	box-sizing: border-box;
+}
+span.close{
+	position: absolute;
+	top:16px;
+	right: 20px;
+	width:24px;
+	height: 24px;
+	background: url(../img/icon/close.png) no-repeat center center;
+	background-size: contain;
+	cursor: pointer;
+	z-index: 100;
+}
+.advantageDetail h2{
+	line-height: 2.5;
+	border-bottom: 1px solid #999;
+	position: relative;
+}
+.advantageDetail h2:before{
+	content: '';
+	display:block;
+	width:4px;
+	height: 24px;
+	background: red;
+	position: absolute;
+	left: -20px;
+	top:20px;
+}
+.advaDetailList li{
+	padding:20px 12px;
+	border-bottom: 1px solid #999;
+}
+.advaDetailList li.odd>div{
+	float: left;
+}
+.advaDetailList li.even>div{
+	float: right;
+}
+.advaDetailList li .advantageName{
+	width: 29%;
+	padding-right: 6%;
+}
+.advaDetailList li.even .advantageName{
+	padding-left: 6%;
+	padding-right: 0;
+	text-align: right;
+}
+.advantageName h3{
+	padding-bottom: 10px;
+}
+.advantageName p{
+	padding-bottom: 14px;
+}
+.advantageName img{
+	width:100%;
+	max-width: 320px;
+}
+.advaDetailList li .advantageIntr{
+	width: 65%;
+}
+.advantageIntr p{
+	line-height: 1.5;
+	padding-bottom: 10px;
+}
+/*prodIntr style*/
+.prodIntr{
+	width:100%;
+	padding-top: 32px;
+}
+.prodIntrNav,.custCaseNav{
+	width: 600px;
+	margin: 40px auto 12px;
+}
+.prodIntrNav li,.custCaseNav li{
+	float: left;
+	width:180px;
+	margin:0 10px;
+	text-align: center;
+	box-sizing: border-box;
+	padding:12px;
+	background: #f0f0f0;
+	color:#777;
+	cursor: pointer;
+}
+.prodIntrNav li.active,.custCaseNav li.active{
+	background: #f23b37;
+	color:#fff;
+}
+.prodIntrNav li:hover,.custCaseNav li:hover{
+	background: #f23b37;
+	color:#fff;
+}
+.intrPic{
+	width:100%;
+}
+.intrPic img{
+	width:100%;
+}
+.intrPic .intrPic2,.intrPic .intrPic3{
+	display: none;
+}
+/*serverStep style*/
+.serverStep{
+	width:100%;
+	padding-top: 32px;
+}
+.stepBanner{
+	width:1200px;
+	margin:0 auto;
+}
+.service-flow{
+	width: 1200px;
+	margin: 0 auto;
+	padding-top: 24px;
+	position: relative;
+}
+.service-flow .bd{
+	padding: 0 40px;
+}
+.service-flow .bd img{
+	width: 100%;
+}
+.service-flow .hd{
+	width: 100%;
+	padding-top:54px;
+}
+.service-flow .hd li{
+	float: left;
+	width: 16.66666667%;
+	overflow: hidden;
+	text-align: center;
+	cursor: pointer;
+}
+.service-flow .hd li .focus-img{
+	height: 36px;
+	line-height: 36px;
+	background: url(../img/icon/process-nav-icon.png) no-repeat center center;
+	background: cover;
+}
+.service-flow .hd li .focus-context{
+	color: #333;
+	font-size: 20px;
+	padding-top: 12px;
+	font-family: '黑体';
+}
+.service-flow .hd li i{
+	font-size: 32px;
+	vertical-align: middle;
+}
+.service-flow .hd li span{
+	font-size: 50px;
+	vertical-align: middle;
+}
+.service-flow .hd li.on .focus-img{
+	background: url(../img/icon/process-on-icon.png) no-repeat center center;
+	background: cover;
+}
+.service-flow .hd li.on .focus-context{
+	color: #f23b37;
+}
+.service-flow .hd a.arrow{
+	position: absolute;
+	width: 63px;
+	height: 139px;
+}
+.service-flow .hd a.prev{
+	left: -70px;
+	top:200px;
+	background: url(../img/icon/prev-icon.png) no-repeat center center;
+	background-size: contain;
+}
+.service-flow .hd a.next{
+	right: -70px;
+	top: 200px;
+	background: url(../img/icon/next-icon.png) no-repeat center center;
+	background-size: contain;
+}
+.stepPic{
+	margin-top: 40px;
+	width:100%;
+	height: 600px;
+	background: url(../img/step-bg1.jpg) no-repeat center center;
+	background-size: cover;
+	position: relative;
+}
+.stepPic .getMore{
+	width: 50%;
+	height: 100%;
+	background: rgba(0,0,0,0.6);
+	position: absolute;
+	top:0;
+	right: 0;
+	color:#fff;
+	padding:80px;
+	box-sizing: border-box;
+}
+.stepPic .getMore h3{
+	font-size: 30px;
+	line-height: 4;
+}
+.stepPic .getMore p{
+	line-height: 2;
+	font-size: 16px;
+}
+.stepPic .getMore a{
+	display: inline-block;
+	background-color:#fff;
+	color:#333;
+	width:120px;
+	height: 40px;
+	line-height: 40px;
+	text-align: center;
+	border-radius: 20px;
+	position: absolute;
+	bottom: 60px;
+}
+/*custCase style*/
+.custCase{
+	width:1200px;
+	margin:0 auto 20px;
+	padding-top: 32px;
+}
+.custCase .casePicList li{
+	float: left;
+	width:360px;
+	height: 320px;
+	border:4px solid #fff;
+	box-sizing: border-box;
+	margin:10px 20px;
+	position: relative;
+}
+.custCase .casePicList li .caseMask{
+	width:100%;
+	height: 100%;
+}
+.custCase .casePicList li a{
+	color: #fff;
+	width:120px;
+	height:36px;
+	text-align: center;
+	line-height: 36px;
+	border:2px solid #fff;
+	position: absolute;
+	top:50%;
+	left:50%;
+	margin-top:-18px;
+	margin-left: -60px;
+	display: none;
+}
+.custCase .casePicList li:hover{
+	border-color: #aaa;
+}
+.custCase .casePicList li:hover .caseMask{
+	background: rgba(0,0,0,0.7);
+}
+.custCase .casePicList li:hover a{
+	display: block;
+}
+.custCase .casePicList li.case1{
+	background: url(../img/index-case1.jpg) no-repeat center center;
+	background-size: cover;
+}
+.custCase .casePicList li.case2{
+	background: url(../img/index-case2.jpg) no-repeat center center;
+	background-size: cover;
+}
+.custCase .casePicList li.case3{
+	background: url(../img/index-case3.jpg) no-repeat center center;
+	background-size: cover;
+}
+.custCase .casePicList li.case4{
+	background: url(../img/index-case2.jpg) no-repeat center center;
+	background-size: cover;
+}
+.custCase .casePicList li.case5{
+	background: url(../img/index-case3.jpg) no-repeat center center;
+	background-size: cover;
+}
+.custCase .casePicList li.case6{
+	background: url(../img/index-case1.jpg) no-repeat center center;
+	background-size: cover;
+}
+.swiper-pagination-bullet {
+    width: 14px;
+    height: 14px;
+    display: inline-block;
+    border-radius: 100%;
+    background: #000;
+    opacity: .2;
+}
+.swiper-pagination-bullet-active {
+    opacity: 1;
+    background: #ffffff;
+}
