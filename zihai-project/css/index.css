@@ -1,3 +1,18 @@
+/*animation*/
+@keyframes hshake{
+	0% {left:0px;}
+	20%{left:-4px;}
+	40%{left: 4px;}
+	60%{left: 2px}
+	80%{left:-2px;}
+	100%{left: 0;}
+}
+.header .shake{
+	animation: hshake .5s 5;
+}
+.login .serverPhone:hover{
+	animation: hshake .5s 2;
+}
 /*banner style*/
 .swiper-container{
 	width:100%;
@@ -78,6 +93,7 @@ h2.indexTitle{
 	text-align: center;
 	line-height: 2;
 	font-size: 22px;
+	font-weight: normal;
 }
 .advanList li h3:before{
 	content: '';
@@ -362,7 +378,7 @@ span.close{
 	text-align: center;
 	border-radius: 20px;
 	position: absolute;
-	bottom: 60px;
+	bottom: 80px;
 }
 /*custCase style*/
 .custCase{

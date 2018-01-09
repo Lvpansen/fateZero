@@ -35,7 +35,7 @@
 			</li>
 			<li class="login">
 				<span class="loginBtn">登录</span>
-				<span class="serverPhone">
+				<span class="serverPhone shake">
 					<span>400-920-5895</span>
 				</span>
 			</li>
@@ -340,6 +340,14 @@
 	    	})
 	    	$('.advantageDetail').click(function(event){
 	    		event.stopPropagation();
+	    	})
+	    	$(document).scroll(function(){
+	    		console.log($(window).scrollTop());
+	    		if ($(window).scrollTop() <5) {
+	    			$('.serverPhone').addClass('shake')
+	    		} else {
+	    			$('.serverPhone').removeClass('shake')
+	    		}
 	    	})
 	    })
 	</script>
