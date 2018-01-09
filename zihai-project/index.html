@@ -277,6 +277,9 @@
 				</div>
 			</li>
 		</ul>
+		<div class="toTop">
+			<img src="img/icon/toTop-icon.png" alt="">
+		</div>
 	</div>
 	<script src="js/jquery-1.8.2.min.js"></script>
 	<script src="js/swiper.min.js"></script>
@@ -327,6 +330,16 @@
 	    	})
 	    	$('.close').click(function(){
 	    		$('.advanMask').css('display','none')
+	    	})
+	    	$('.toTop').click(function(){
+	    		var sc=$(window).scrollTop();
+   				$('body,html').animate({scrollTop:0},500);
+	    	})
+	    	$('.advanMask').click(function(){
+	    		$('.advanMask').css('display','none')
+	    	})
+	    	$('.advantageDetail').click(function(event){
+	    		event.stopPropagation();
 	    	})
 	    })
 	</script>

@@ -1,3 +1,6 @@
+html,body{
+	font-family: 'Microsoft YaHei';
+}
 .clear:after{
 	content: '';
 	display: block;
@@ -41,11 +44,12 @@ input:focus{
 	color:#1f1f1f;
 	letter-spacing: 2px;
 	display: inline-block;
-	padding: 0 4px;
-	width:92px;
+	padding: 0 8px;
+	width:88px;
 }
 .nav li.active a,.nav li:hover a{
 	color:#f23b37;
+	font-weight: bold;
 }
 .nav li.login{
 	padding-left: 12px;
@@ -62,6 +66,7 @@ input:focus{
 	background-size: contain;
 	vertical-align: middle;
 	margin-right:4px;
+    margin-bottom: 2px;
 }
 .nav li.login span.serverPhone{
 	display: inline-block;
@@ -75,10 +80,10 @@ input:focus{
 }
 span.serverPhone span{
 	position: absolute;
-	left:-10px;
-	top:30px;
+	left:30px;
+	/*top:30px;*/
 	width:120px;
-	padding-top: 6px;
+	/*padding-top: 6px;*/
 	line-height: 1.5;
 	z-index: 99;
 	visibility: hidden;
@@ -88,13 +93,14 @@ span.serverPhone:hover span{
 }
 .footer{
 	background: #2d3645;
+	position: relative;
 }
 .footer>ul{
 	width:100%;
 	max-width: 2000px;
 	margin:0 auto;
 	height: 320px;
-	padding:0 50px;
+	padding:0 20px;
 	box-sizing: border-box;
 }
 .footer>ul>li{
@@ -130,10 +136,11 @@ span.serverPhone:hover span{
 	padding-left: 30px;
 }
 .serverInfo p{
-	line-height: 2.5;
+	line-height: 2;
+	font-size: 18px;
 }
 .serverInfo .phoneNum{
-	font-size:32px;
+	font-size:40px;
 }
 li.onlineInfo{
 	position: relative;
