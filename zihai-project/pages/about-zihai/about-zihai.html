@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>资海能源</title>
+	<link rel="stylesheet" href="../../css/reset.css">
+	<link rel="stylesheet" href="../../css/common.css">
+</head>
+<body>
+	<div class="header clear">
+		<div class="logo"><img src="../../img/logo-index.png" alt=""></div>
+		<ul class="nav clear">
+			<li class="active">
+				<a href="javascript:;">首页</a>
+			</li>
+			<li>
+				<a href="javascript:;">走进资海</a>
+			</li>
+			<li>
+				<a href="javascript:;">客户案例</a>
+			</li>
+			<li>
+				<a href="javascript:;">新闻资讯</a>
+			</li>
+			<li>
+				<a href="javascript:;">服务中心</a>
+			</li>
+			<li>
+				<a href="javascript:;">电站监控</a>
+			</li>
+			<li>
+				<a href="javascript:;">联系我们</a>
+			</li>
+			<li class="login">
+				<span class="loginBtn">登录</span>
+				<span class="serverPhone shake">
+					<span>400-920-5895</span>
+				</span>
+			</li>
+		</ul>
+	</div>
+	<div class="footer">
+		<ul class="clear">
+			<li>
+				<div class="footerTitle">
+					<h2>CONTANCT</h2>
+					<h3>联系我们</h3>
+				</div>
+				<div class="footerServer clear">
+					<span class="serverIcon"></span>
+					<div class="serverInfo">
+						<p>客服工作时间：9:00-18:00</p>
+						<p class="phoneNum">400-920-5886</p>
+					</div>
+				</div>
+			</li>
+			<li class="onlineInfo">
+				<div class="footerTitle">
+					<h2>INFORMATION</h2>
+					<h3>在线留言</h3>
+				</div>
+				<div class="inforForm">
+					<div>
+						<input class="text" type="text" placeholder="姓名">
+					</div>
+					<div>
+						<input class="text" type="text" placeholder="电话">
+					</div>
+					<div>
+						<input class="btn" type="button" value="提交">
+					</div>
+				</div>
+			</li>
+			<li class="clear qrCode">
+				<div class="qrCode1">
+					<img src="../../img/qrCode1.jpg" alt="">
+					<p>微信服务号</p>
+				</div>
+				<div>
+					<img src="../../img/qrCode2.jpg" alt="">
+					<p>微信订阅号</p>
+				</div>
+			</li>
+		</ul>
+	</div>
+	<script src="../../js/jquery-1.8.2.min.js"></script>
+	<script>
+	    $(function(){
+	    	$(document).scroll(function(){
+	    		console.log($(window).scrollTop());
+	    		if ($(window).scrollTop() <5) {
+	    			$('.serverPhone').addClass('shake')
+	    		} else {
+	    			$('.serverPhone').removeClass('shake')
+	    		}
+	    	})
+	    })
+	</script>
+</body>
+</html>
