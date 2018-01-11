@@ -48,31 +48,96 @@ h2.indexTitle{
 	background: #f23b37;
 	color:#fff;
 }
-.intrduction{
+.aboutContent{
 	width:1100px;
 	margin:0 auto;
 	background: #fff;
 	padding:50px 46px 30px;
 }
-.intrTitle h2{
+.intrduction{
+	/*width:1100px;
+	margin:0 auto;
+	background: #fff;
+	padding:50px 46px 30px;*/
+}
+.contentTitle h2{
 	font-size: 40px;
 	color:#f13a3a;
 }
-.intrTitle span{
+.contentTitle span{
 	font-size: 22px;
 	color:#f13a3a;
 }
-.intrContent{
+.mainContent{
 	padding: 10px 12px;
 	text-align: center;
 }
-.intrContent p{
+.mainContent p{
 	color:#333;
 	line-height: 2;
 	text-indent: 2em;
 	padding-bottom: 20px;
 	text-align: left;
 }
-.intrContent img{
+.mainContent img{
 	padding-bottom: 20px;
+	max-width: 100%;
+}
+.distribution .mainContent{
+	text-align: left;
+}
+.headquarters,.subsidiary{
+	border-bottom: 1px solid #dedede;
+	padding:0 10px;
+	margin-bottom: 20px;
+}
+.distribution .mainContent h3{
+	font-size: 20px;
+	color:#333;
+}
+.distribution .mainContent h3:before{
+	content: '';
+	display: inline-block;
+	width:30px;
+	height: 30px;
+	background: url(../img/icon/company-icon.png) no-repeat center center;
+	background-size: contain;
+	vertical-align: middle;
+	margin:0 6px 4px 0;
+}
+.companyAreas li{
+	padding-bottom: 20px;
+}
+.companyAreas .area{
+	font-size: 20px;
+	padding:10px 0;
+}
+.companyAreas .companyDetail{
+	color:#666;
+}
+.companyAreas .companyName{
+	font-size: 18px;
+	padding-bottom: 6px;
+}
+.companyAreas .companyAddress,.companyAreas .companyPhone{
+	font-size: 14px;
+	line-height: 1.5;
+}
+.subsidiary .companyAreas{
+	float: left;
+	width:50%;
+}
+.subsidiary .companyAreasR{
+	padding-left: 80px;
+	box-sizing: border-box;
+}
+.partner .mainContent p{
+	text-align: center;
+	font-size: 18px;
+}
+.intrduction,.distribution,.certification,.partner{
+	display: none;
+}
+.activeContent{
+	display: block;
 }
