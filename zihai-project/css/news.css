@@ -53,6 +53,7 @@ h2.indexTitle{
 	margin:0 auto;
 	background: #fff;
 	padding:50px 46px 30px;
+	position: relative;
 }
 .newsImg,.headNewsList{
 	width:50%;
@@ -135,9 +136,65 @@ h2.indexTitle{
 .newsList .newsIntr a{
 	color:#666;
 }
+.pages{
+	position: absolute;
+	right: 46px;
+	bottom:30px;
+}
+.pages li{
+	float: left;
+}
+.pages li{
+	margin: 0 8px;
+}
+.pages li a{
+	color:#ff7c6d;
+	padding:4px 8px;
+	border:1px solid #ff7c6d;
+	border-radius: 4px;
+	font-size: 12px;
+}
+.pages li a.ellipsis{
+	border:none;
+	padding:0;
+}
+.pages li a.activePage{
+	background: #ff7c6d;
+	color:#fff;
+}
+.pages li a:hover{
+	background: #ff7c6d;
+	color:#fff;
+}
 .company,.industry,.village{
 	display: none;
 }
 .activeContent{
 	display: block;
+}
+
+/* newsDetail style */
+.newsTitle{
+	font-size: 22px;
+	font-weight: normal;
+	padding-bottom: 26px;
+}
+.newsTaps{
+	padding-bottom: 20px;
+}
+.newsDetailContent{
+	border-top:1px solid #999;
+	border-bottom: 1px solid #999;
+	padding:30px 24px;
+	text-align: center;
+}
+.newsDetailContent p{
+	text-align: left;
+	text-indent: 2em;
+	line-height: 1.8;	
+	padding:15px 0;
+	text-align: justify;
+}
+.newsDetailContent img{
+	max-width: 100%;
 }
