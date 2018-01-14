@@ -166,6 +166,10 @@ h2.indexTitle{
 	background: #ff7c6d;
 	color:#fff;
 }
+.pages li a.ellipsis:hover{
+	background: #fff;
+	color:#ff7c6d;
+}
 .company,.industry,.village{
 	display: none;
 }
@@ -197,4 +201,63 @@ h2.indexTitle{
 }
 .newsDetailContent img{
 	max-width: 100%;
+}
+.newsTaps span{
+	color:#a9a9a9;
+	padding-right: 12px;
+}
+.newsTaps span:before{
+	content: '';
+	display: inline-block;
+	vertical-align: middle;
+	width:16px;
+	height: 16px;
+	margin-bottom: 3px;
+	margin-right: 6px;
+}
+.newsTaps .time:before{
+	background: url(../img/icon/newsTime-icon.png) no-repeat center center;
+	background-size: contain;
+}
+.newsTaps .browse:before{
+	background: url(../img/icon/newsBrowse-icon.png) no-repeat center center;
+	background-size: contain;
+}
+.newsTaps .source:before{
+	background: url(../img/icon/newsSource-icon.png) no-repeat center center;
+	background-size: contain;
+}
+.newsDetailTab{
+	width:50%;
+	display: inline-block;
+}
+.newsDetailTab p{
+	padding-top: 30px;
+}
+.newsDetailTab p a{
+	color:#333;
+}
+.newsBottom .share{
+	float: right;
+	padding-top: 46px;
+	padding-right: 60px;
+}
+.newsBottom .share a{
+	display: inline-block;
+	width:32px;
+	height: 32px;
+	vertical-align: middle;
+	margin:0 4px;
+}
+.newsBottom .share a.wechat{
+	background: url(../img/icon/wechat-icon.png) no-repeat center center;
+	background-size: contain;
+}
+.newsBottom .share a.sina{
+	background: url(../img/icon/sina-icon.png) no-repeat center center;
+	background-size: contain;
+}
+.newsBottom .share a.qqzone{
+	background: url(../img/icon/qqzone-icon.png) no-repeat center center;
+	background-size: contain;
 }

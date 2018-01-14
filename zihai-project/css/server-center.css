@@ -1,0 +1,155 @@
+/*.serverBanner{
+	width:100%;
+	height: 500px;
+	background: url(../img/server.jpg) no-repeat center center;
+	background-size: cover;
+}*/
+.serverBanner{
+	width:100%;
+}
+.serverBanner img{
+	width:100%;
+}
+.serverMain{
+	padding: 60px 0;
+	background: #e9e9e9;
+}
+h2.indexTitle{
+	text-align: center;
+	width:300px;
+	margin:0 auto;
+	color:#333;
+	border-bottom: 1px solid #acacac;
+	padding-bottom: 12px;
+}
+.border-bottom{
+	height: 4px;
+	width:36px;
+	margin: 0 auto;
+	background: #f23b37;
+	position: relative;
+	top:-2px;
+}
+.serverNav{
+	width: 800px;
+	margin: 60px auto 0;
+	padding-bottom: 12px;
+}
+.serverNav li{
+	float: left;
+	width:180px;
+	margin:0 10px;
+	text-align: center;
+	box-sizing: border-box;
+	padding:12px;
+	background: #f0f0f0;
+	color:#777;
+	cursor: pointer;
+}
+.serverNav li.active{
+	background: #f23b37;
+	color:#fff;
+}
+.serverNav li:hover{
+	background: #f23b37;
+	color:#fff;
+}
+.serverContent{
+	width:1100px;
+	margin:0 auto;
+	background: #fff;
+	/*padding:50px 46px 30px;*/
+	position: relative;
+}
+.serverContent h3{
+	padding: 30px;
+	border-bottom:1px solid #ccc;
+	font-size: 22px;
+}
+.serverText .messageForm{
+	padding:40px 80px;
+}
+.serverText .messageForm li{
+	padding:8px 0;
+}
+.serverText .messageForm label{
+	display: inline-block;
+	width:100px;
+	text-align: right;
+}
+.serverText .messageForm input{
+	padding:12px;
+	width:80%;
+	border:1px solid #ccc;
+}
+.serverText .messageForm select{
+	padding:12px;
+	width:10%;
+	border:1px solid #ccc;
+}
+.serverText .messageForm .btn input{
+	width:120px;
+	background: #f13a3a;
+	border:none;
+	color:#fff;
+	cursor: pointer;
+}
+.consult{
+	padding:50px 46px 30px;
+}
+.consult li{
+	padding-bottom: 30px;
+}
+.consult li .question{
+	padding:30px 130px;
+	padding-right: 0;
+	background: #ffeeee;
+	position: relative;
+}
+.consult li .question a{
+	color:#333;
+}
+.consult li .question a:hover{
+	text-decoration: underline;
+}
+.consult li .question:before{
+	content: '';
+	width:100px;
+	height: 66px;
+	position: absolute;
+	top:-10px;
+	left: -10px;
+	background: url(../img/icon/question-icon.png) no-repeat center center;
+	background-size: contain;
+}
+.consult li .question:after{
+	content: '';
+	display: inline-block;
+	width:18px;
+	height: 18px;
+	margin-top: 2px;
+	position: absolute;
+	right: 24px;
+	background: url(../img/icon/consult-icon2.png) no-repeat center center;
+	background-size: contain;
+}
+.consult li .answerShow:after{
+	background: url(../img/icon/consult-icon1.png) no-repeat center center;
+	background-size: contain;
+}
+.consult li .answer{
+	padding:28px 40px;
+	margin-top: 14px;
+	background: #f0f0f0;
+	line-height: 1.5;
+	display: none;
+}
+.consult li .showAnswer{
+	display: block;
+}
+.paid,.free,.join,.consult{
+	display: none;
+}
+.activeContent{
+	display: block;
+}
