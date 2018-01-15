@@ -1,0 +1,163 @@
+/*animation*/
+@keyframes hshake{
+	0% {left:0px;}
+	20%{left:-4px;}
+	40%{left: 4px;}
+	60%{left: 2px}
+	80%{left:-2px;}
+	100%{left: 0;}
+}
+/*.header .shake{
+	animation: hshake .5s 5;
+}
+.login .serverPhone:hover{
+	animation: hshake .5s 2;
+}*/
+/*banner style*/
+.caseBanner{
+	width:100%;
+}
+.caseBanner img{
+	width:100%;
+}
+
+h2.indexTitle{
+	text-align: center;
+	width:300px;
+	margin:0 auto;
+	color:#333;
+	border-bottom: 1px solid #acacac;
+	padding-bottom: 12px;
+}
+.border-bottom{
+	height: 4px;
+	width:36px;
+	margin: 0 auto;
+	background: #f23b37;
+	position: relative;
+	top:-2px;
+}
+.custCaseNav{
+	width: 600px;
+	margin: 60px auto 0;
+	padding-bottom: 12px;
+}
+.custCaseNav li{
+	float: left;
+	width:180px;
+	margin:0 10px;
+	text-align: center;
+	box-sizing: border-box;
+	padding:12px;
+	background: #f0f0f0;
+	color:#777;
+	cursor: pointer;
+}
+.custCaseNav li.active{
+	background: #f23b37;
+	color:#fff;
+}
+.custCaseNav li:hover{
+	background: #f23b37;
+	color:#fff;
+}
+/*custCase style*/
+.custCase{
+	width:1200px;
+	margin:0 auto 30px;
+	padding-top: 32px;
+}
+.custCase .casePicList li{
+	float: left;
+	width:360px;
+	height: 320px;
+	border:8px solid #fff;
+	box-sizing: border-box;
+	margin:10px 20px;
+	position: relative;
+}
+.custCase .casePicList li .caseMask{
+	width:100%;
+	height: 100%;
+}
+.custCase .casePicList li a{
+	color: #fff;
+	width:120px;
+	height:36px;
+	text-align: center;
+	line-height: 36px;
+	border:2px solid #fff;
+	position: absolute;
+	top:50%;
+	left:50%;
+	margin-top:-18px;
+	margin-left: -60px;
+	display: none;
+}
+.custCase .casePicList li a:before{
+	content: '';
+	display: block;
+	width:36px;
+	height: 1px;
+	background: rgba(255,255,255,0.7);
+	position: absolute;
+	top:-30px;
+	left:10px;
+	transform: rotate(45deg);
+}
+.custCase .casePicList li a:after{
+	content: '';
+	display: block;
+	width:36px;
+	height: 1px;
+	background: rgba(255,255,255,0.7);
+	position: absolute;
+	bottom:-30px;
+	right:10px;
+	transform: rotate(45deg);
+}
+.custCase .casePicList li:hover{
+	border-color: #737373;
+}
+.custCase .casePicList li:hover .caseMask{
+	background: rgba(0,0,0,0.7);
+}
+.custCase .casePicList li:hover a{
+	display: block;
+}
+.custCase .casePicList li.case1{
+	background: url(../img/index-case1.jpg) no-repeat center center;
+	background-size: cover;
+}
+.custCase .casePicList li.case2{
+	background: url(../img/index-case2.jpg) no-repeat center center;
+	background-size: cover;
+}
+.custCase .casePicList li.case3{
+	background: url(../img/index-case3.jpg) no-repeat center center;
+	background-size: cover;
+}
+.custCase .casePicList li.case4{
+	background: url(../img/index-case2.jpg) no-repeat center center;
+	background-size: cover;
+}
+.custCase .casePicList li.case5{
+	background: url(../img/index-case3.jpg) no-repeat center center;
+	background-size: cover;
+}
+.custCase .casePicList li.case6{
+	background: url(../img/index-case1.jpg) no-repeat center center;
+	background-size: cover;
+}
+.swiper-pagination-bullet {
+    width: 14px;
+    height: 14px;
+    display: inline-block;
+    border-radius: 100%;
+    background: #000;
+    opacity: .2;
+}
+.swiper-pagination-bullet-active {
+    opacity: 1;
+    background: #ffffff;
+}

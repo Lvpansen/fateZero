@@ -145,6 +145,22 @@ h2.indexTitle{
 	height: 200px;
 	padding:16px;
 }
+.contractForm .btn input{
+	width: 120px;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    padding:12px;
+}
+.contractForm .btn input.confirm{
+	 background: #f13a3a;
+}
+.contractForm .btn input.reset{
+	background: #bcbcbc;
+}
+.contractForm .btn input:active{
+	background: #f13a3a;
+}
 .headquarters,.jiangsu,.zhejiang,.customerService,.contractOnline{
 	display: none;
 }
