@@ -17,7 +17,7 @@
 		<div class="main clear">
 			<div class="left">
 				<div class="sideItem">
-					<div class="datacontent"></div>
+					<div class="datacontent" id="chart1"></div>
 					<div class="dataName">
 						<span class="name">集团电站装机量数据图</span>
 					</div>
@@ -43,7 +43,7 @@
 					</div>
 				</div>
 				<div class="sideItem">
-					<div class="datacontent"></div>
+					<div class="datacontent" id="chart2"></div>
 					<div class="dataName">
 						<span class="name name3">故障电站数目图</span>
 						<span></span>
@@ -99,21 +99,21 @@
 							</ul>
 						</div>
 					</div>
-					<div class="eleData"></div>
+					<div class="eleData" id="chart5"></div>
 				</div>
 			</div>
 			<div class="right">
 				<div class="sideItem">
-					<div class="datacontent"></div>
+					<div class="datacontent" id="chart3"></div>
 					<div class="dataName">
 						<span class="name name4">集团电站发电量数据图</span>
 						<span></span>
 					</div>
 				</div>
 				<div class="sideItem" style="margin:2% 0;">
-					<div class="datacontent"></div>
+					<div class="datacontent" id="chart4"></div>
 					<div class="dataName">
-						<span class="name name5">集团总装机量/总结入户数</span>
+						<span class="name name5">集团总装机量/总接入户数</span>
 						<span></span>
 					</div>
 				</div>
@@ -149,5 +149,157 @@
 			</div>
 		</div>
 	</div>
+	<script src="../../js/echarts.min.js"></script>
+	<script>
+		var myChart1 = echarts.init(document.getElementById('chart1'));
+		var myChart2 = echarts.init(document.getElementById('chart2'));
+		var myChart3 = echarts.init(document.getElementById('chart3'));
+		var myChart4 = echarts.init(document.getElementById('chart4'));
+		var myChart5 = echarts.init(document.getElementById('chart5'));
+		var option1 = {
+				toolTip:{},
+		    xAxis: {
+		        type: 'category',
+		        name:'月',
+		        data: [1,2,3,4,5,6,7,8,9,10,11,12],
+		        axisLabel:{
+		        	color:'#fff'
+		        },
+		        axisLine:{
+		        	lineStyle:{
+		        		color:'#fff'
+		        	}
+		        }
+		    },
+		    yAxis: {
+		        type: 'value',
+		        name:'(KW)',
+		        axisLabel:{
+		        	color:'#fff'
+		        },
+		        axisLine:{
+		        	lineStyle:{
+		        		color:'#fff'
+		        	}
+		        }
+		    },
+		    series: [{
+		        data: [120, 200, 150, 80, 70, 510, 130,230,100,350,320,400],
+		        type: 'bar',
+		        itemStyle:{
+		            color:'#0aa6bf'
+		        }
+		    }]
+		};
+		var option2 = {
+		    xAxis: {
+		        type: 'value',
+		        name:'次',
+		        axisLabel:{
+		        	color:'#fff'
+		        },
+		        axisLine:{
+		        	lineStyle:{
+		        		color:'#fff'
+		        	}
+		        }
+		    },
+		    yAxis: {
+		        type: 'category',
+		        data: ['故障', '故障', '故障'],
+		        axisLabel:{
+		        	color:'#fff'
+		        },
+		        axisLine:{
+		        	lineStyle:{
+		        		color:'#fff'
+		        	}
+		        }
+		    },
+		    series: [{
+		        data: [12, 20, 32],
+		        type: 'bar'
+		    }]
+		};
+		var option4 = {
+		    xAxis: {
+		        type: 'category',
+		        data: [1,2,3,4,5,6,7,8,9,10,11,12],
+		        axisLabel:{
+		        	color:'#fff'
+		        },
+		        axisLine:{
+		        	lineStyle:{
+		        		color:'#fff'
+		        	}
+		        }
+		    },
+		    yAxis: {
+		        type: 'value',
+		        axisLabel:{
+		        	color:'#fff'
+		        },
+		        axisLine:{
+		        	lineStyle:{
+		        		color:'#fff'
+		        	}
+		        }
+		    },
+		    series: [{
+		        data: [320, 432, 501, 534, 690, 730, 820,932,1023,1156,1212,1322],
+		        type: 'line'
+		    }]
+		};
+		var option5 = {
+		    // tooltip: {
+		    //     trigger: 'item',
+		    //     formatter: "{a} <br/>{b}: {c} ({d}%)"
+		    // },
+		    // legend: {
+		    //     orient: 'vertical',
+		    //     x: 'left',
+		    //     data:['直接访问','邮件营销','联盟广告','视频广告','搜索引擎']
+		    // },
+		    series: [
+		        {
+		            name:'发电量',
+		            type:'pie',
+		            radius: ['50%', '70%'],
+		            avoidLabelOverlap: false,
+		            label: {
+		                normal: {
+		                    show: false,
+		                    position: 'center'
+		                },
+		                emphasis: {
+		                    show: true,
+		                    textStyle: {
+		                        fontSize: '14',
+		                        fontWeight: 'bold'
+		                    }
+		                }
+		            },
+		            labelLine: {
+		                normal: {
+		                    show: false
+		                }
+		            },
+		            data:[
+		                {value:335, name:'一季度电量'},
+		                {value:310, name:'二季度电量'},
+		                {value:234, name:'三季度电量'},
+		                {value:135, name:'四季度电量'},
+		            ]
+		        }
+		    ]
+		};
+
+
+		myChart1.setOption(option1)
+		myChart2.setOption(option2)
+		myChart3.setOption(option1)
+		myChart4.setOption(option4)
+		myChart5.setOption(option5)
+	</script>
 </body>
 </html>
