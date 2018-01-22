@@ -63,43 +63,51 @@
 							<li>0</li>
 						</ul>
 					</div>
-					<div class="search"></div>
+					<div class="search">
+						<div class="searchBtn"></div>
+					</div>
 				</div>
 				<div class="mapData">
-					<div class="areaData">
-						<div class="areaName">
-							<h3 class="user">盐城大丰西团</h3>
-							<div class="userAddress">江苏省盐城市大丰区西团村</div>
-						</div>
-						<div class="areaDataInfo">
-							<div class="userPic">
-								<img src="../../img/icon/big-screen-icon/user-pic1.png" alt="">
-							</div>
-							<ul class="userDetail">
-								<li>
-									<div>
-										<p>24 kW/h</p>
-										<span>当日发电量</span>
-									</div>
-									<div>
-										<p>￥32</p>
-										<span>当日收益</span>
-									</div>
-								</li>
-								<li>
-									<div>
-										<p>0.7 MW/h</p>
-										<span>累计发电量</span>
-									</div>
-									<div>
-										<p>￥1456</p>
-										<span>累计收益</span>
-									</div>
-								</li>
-							</ul>
-						</div>
+					<div class="showBtn">
+						<div class="toggleBtn"></div>
 					</div>
-					<div class="eleData" id="chart5"></div>
+					<div class="mapDataContainer">
+						<div class="areaData">
+							<div class="areaName">
+								<h3 class="user">盐城大丰西团</h3>
+								<div class="userAddress">江苏省盐城市大丰区西团村</div>
+							</div>
+							<div class="areaDataInfo">
+								<div class="userPic">
+									<img src="../../img/icon/big-screen-icon/user-pic1.png" alt="">
+								</div>
+								<ul class="userDetail">
+									<li>
+										<div>
+											<p>24 kW/h</p>
+											<span>当日发电量</span>
+										</div>
+										<div>
+											<p>￥32</p>
+											<span>当日收益</span>
+										</div>
+									</li>
+									<li>
+										<div>
+											<p>0.7 MW/h</p>
+											<span>累计发电量</span>
+										</div>
+										<div>
+											<p>￥1456</p>
+											<span>累计收益</span>
+										</div>
+									</li>
+								</ul>
+							</div>
+						</div>
+						<div class="eleData" id="chart5"></div>
+					</div>
+					
 				</div>
 			</div>
 			<div class="right">
@@ -150,6 +158,32 @@
 		</div>
 	</div>
 	<script src="../../js/echarts.min.js"></script>
+	<script src="../../js/jquery-1.8.2.min.js"></script>
+	<script>
+		$('.toggleBtn').click(function(){
+			$('.mapData').toggleClass('mapDataHide');
+		})
+
+		var t = null;
+	    time();
+
+	    function time(){
+	       	clearTimeout(t);//清除定时器
+	       	var dt = new Date();
+	       	var year = dt.getFullYear();
+	       	var mon = dt.getMonth();
+			var month = mon< 9 ? "0" + (mon + 1) : mon + 1;
+			var date = dt.getDate();
+			var h = dt.getHours();
+			var hour = h < 10 ? "0" + h : h;
+			var min = dt.getMinutes();
+			var minute = min < 10 ? "0" + min : min;
+			var sec = dt.getSeconds();
+			var second = sec < 10 ? "0" + sec : sec;
+	       $('.time').html(year + '-' + month + '-' + date +' '+ hour + ':' + minute +':'+second)
+	       t = setTimeout(time,1000); //设定定时器，循环执行             
+	    } 
+	</script>
 	<script>
 		var myChart1 = echarts.init(document.getElementById('chart1'));
 		var myChart2 = echarts.init(document.getElementById('chart2'));
