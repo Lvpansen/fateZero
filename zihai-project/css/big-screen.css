@@ -291,6 +291,10 @@ html,body{
 	color:#fff;
 	flex: 1;
 }
+.weather .weatherIcon p{
+	font-weight: bold;
+	line-height: 2;
+}
 .weather .weatherIcon img{
 	width:50%;
 }
@@ -301,6 +305,7 @@ html,body{
 }
 .weather .weatherInfo .infoDetail{
 	font-size: 0.8rem;
+	font-weight: bold;
 	line-height: 1.5;
 }
 .contribution{
