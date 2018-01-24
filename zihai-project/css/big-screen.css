@@ -248,6 +248,7 @@ html,body{
 	display: flex;
 	align-items: center;
 	padding-left: 0.3rem;
+	font-weight: bold;
 }
 .dataName .name:before{
 	content:'';
@@ -333,6 +334,14 @@ html,body{
 	background: url(../img/icon/big-screen-icon/contri-icon.png) no-repeat center center;
 	background-size: contain;
 	margin-right: 0.5rem;
+}
+.contribution .carbon:before{
+	background: url(../img/icon/big-screen-icon/contri-icon1.png) no-repeat center center;
+	background-size: contain;
+}
+.contribution .coal:before{
+	background: url(../img/icon/big-screen-icon/contri-icon2.png) no-repeat center center;
+	background-size: contain;
 }
 .contribution .contributionInfo .conData{
 	font-size: 1rem;

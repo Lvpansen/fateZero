@@ -128,7 +128,7 @@
 				<div class="sideItem">
 					<div class="datacontent contribution">
 						<div>
-							<div class="contributionInfo">
+							<div class="contributionInfo trees">
 								<div>
 									<p class="conData"><span>0.705</span>万m³</p>
 									<p>减少森林砍伐</p>
@@ -136,16 +136,16 @@
 							</div>
 						</div>
 						<div>
-							<div class="contributionInfo" style="padding-right: 1rem;">
+							<div class="contributionInfo carbon" style="padding-right: 1rem;">
 								<div>
-									<p class="conData"><span>0.705</span>万㎡</p>
-									<p>减少森林砍伐</p>
+									<p class="conData"><span>1.875</span>万吨</p>
+									<p>二氧化碳排量</p>
 								</div>
 							</div>
-							<div class="contributionInfo">
+							<div class="contributionInfo coal">
 								<div>
-									<p class="conData"><span>0.705</span>万㎡</p>
-									<p>减少森林砍伐</p>
+									<p class="conData"><span>0.752</span>万吨</p>
+									<p>节约标准煤</p>
 								</div>
 							</div>
 						</div>
@@ -240,9 +240,10 @@
 		    },
 		    yAxis: {
 		        type: 'category',
-		        data: ['故障', '故障', '故障'],
+		        data: ['电网故障', '通讯故障','逆变器故障' ],
 		        axisLabel:{
-		        	color:'#fff'
+		        	rotate:60,
+		        	color:'#fff',
 		        },
 		        axisLine:{
 		        	lineStyle:{
@@ -252,7 +253,43 @@
 		    },
 		    series: [{
 		        data: [12, 20, 32],
-		        type: 'bar'
+		        type: 'bar',
+		        barWidth:20
+		    }]
+		};
+		var option3 = {
+				toolTip:{},
+		    xAxis: {
+		        type: 'category',
+		        name:'日',
+		        data: [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30],
+		        axisLabel:{
+		        	color:'#fff'
+		        },
+		        axisLine:{
+		        	lineStyle:{
+		        		color:'#fff'
+		        	}
+		        }
+		    },
+		    yAxis: {
+		        type: 'value',
+		        name:'(KW)',
+		        axisLabel:{
+		        	color:'#fff',
+		        },
+		        axisLine:{
+		        	lineStyle:{
+		        		color:'#fff'
+		        	}
+		        }
+		    },
+		    series: [{
+		        data: [120, 200, 150, 80, 70, 510, 130,230,100,350,320,400,120, 200, 150, 80, 70, 510, 130,230,100,350,320,400,255,505,600,465,200,100],
+		        type: 'bar',
+		        itemStyle:{
+		            color:'#0aa6bf'
+		        }
 		    }]
 		};
 		var option4 = {
@@ -284,54 +321,124 @@
 		        type: 'line'
 		    }]
 		};
+		var scale = 0.5;
+		var echartData = [
+			{
+			    value: 30,
+			    name: '一季度电量'
+			}, {
+			    value: 38,
+			    name: '二季度电量'
+			}, {
+			    value: 35,
+			    name: '三季度电量'
+			}, {
+			    value: 25,
+			    name: '四季度电量'
+			}
+		]
+		var rich = {
+		    yellow: {
+		        color: "#ffc72b",
+		        fontSize: 30 * scale,
+		        padding: [5, 4],
+		        align: 'center'
+		    },
+		    total: {
+		        color: "#ffc72b",
+		        fontSize: 40 * scale,
+		        align: 'center'
+		    },
+		    white: {
+		        color: "#fff",
+		        align: 'center',
+		        fontSize: 12,
+		        padding: [8, 0]
+		    },
+		    blue: {
+		        color: '#49dff0',
+		        fontSize: 12,
+		        align: 'center'
+		    },
+		    hr: {
+		        borderColor: '#0b5263',
+		        width: '100%',
+		        borderWidth: 1,
+		        height: 0,
+		    }
+		}
 		var option5 = {
-		    // tooltip: {
-		    //     trigger: 'item',
-		    //     formatter: "{a} <br/>{b}: {c} ({d}%)"
-		    // },
-		    // legend: {
-		    //     orient: 'vertical',
-		    //     x: 'left',
-		    //     data:['直接访问','邮件营销','联盟广告','视频广告','搜索引擎']
-		    // },
-		    series: [
-		        {
-		            name:'发电量',
-		            type:'pie',
-		            radius: ['50%', '70%'],
-		            avoidLabelOverlap: false,
-		            label: {
-		                normal: {
-		                    show: false,
-		                    position: 'center'
-		                },
-		                emphasis: {
-		                    show: true,
-		                    textStyle: {
-		                        fontSize: '14',
-		                        fontWeight: 'bold'
-		                    }
-		                }
-		            },
-		            labelLine: {
-		                normal: {
-		                    show: false
-		                }
-		            },
-		            data:[
-		                {value:335, name:'一季度电量'},
-		                {value:310, name:'二季度电量'},
-		                {value:234, name:'三季度电量'},
-		                {value:135, name:'四季度电量'},
-		            ]
+		    title: {
+		        text:'总电量(kw/h)',
+		        left:'center',
+		        top:'53%',
+		        // padding:[24,0],
+		        textStyle:{
+		            color:'#fff',
+		            fontSize:12,
+		            align:'center'
 		        }
-		    ]
+		    },
+		    legend: {
+		        selectedMode:false,
+		        formatter: function(name) {
+		            var total = 0; //各科正确率总和
+		            var averagePercent; //综合正确率
+		            echartData.forEach(function(value, index, array) {
+		                total += value.value;
+		            });
+		            return '{total|' + total + '}';
+		        },
+		        data: [echartData[0].name],
+		        // data: ['高等教育学'],
+		        // itemGap: 50,
+		        left: 'center',
+		        top: 'center',
+		        icon: 'none',
+		        align:'center',
+		        textStyle: {
+		            color: "#fff",
+		            fontSize: 20,
+		            rich: rich
+		        },
+		    },
+		    series: [{
+		        name: '发电总量',
+		        type: 'pie',
+		        radius: ['40%', '60%'],
+		        hoverAnimation: false,
+		        color: ['#01ffba', '#0eb140', '#49dff0', '#034079'],
+		        label: {
+		            normal: {
+		                formatter: function(params, ticket, callback) {
+		                    var total = 0; //考生总数量
+		                    var percent = 0; //考生占比
+		                    echartData.forEach(function(value, index, array) {
+		                        total += value.value;
+		                    });
+		                    percent = ((params.value / total) * 100).toFixed(1);
+		                    return '{white|' + params.name + '}\n{hr|}\n{yellow|' + params.value + '}\n{blue|' + percent + '%}';
+		                },
+		                rich: rich
+		            },
+		        },
+		        labelLine: {
+		            normal: {
+		                length: 55 * scale,
+		                length2: 0,
+		                lineStyle: {
+		                    color: '#0b5263'
+		                }
+		            }
+		        },
+		        data: echartData
+		    }]
 		};
 
 
 		myChart1.setOption(option1)
 		myChart2.setOption(option2)
-		myChart3.setOption(option1)
+		myChart3.setOption(option3)
 		myChart4.setOption(option4)
 		myChart5.setOption(option5)
 	</script>
