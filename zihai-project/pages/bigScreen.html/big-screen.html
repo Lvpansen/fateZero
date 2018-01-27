@@ -19,27 +19,29 @@
 				<div class="sideItem">
 					<div class="datacontent" id="chart1"></div>
 					<div class="dataName">
-						<span class="name">集团电站装机量数据图</span>
+						<span class="name">集团电站年发电量数据图</span>
 					</div>
 				</div>
 				<div class="sideItem" style="margin:2% 0;">
-					<div class="datacontent weather">
-						<div class="weatherIcon">
-							<img src="../../img/icon/big-screen-icon/weather-icon1.png" alt="">
-							<p>12-20℃</p>
+					<div class="datacontent chart4Con">
+						<div>
+							<div id="chart4"></div>
+							<h3>
+								<p>123kw</p>
+								<span>总量</span>
+							</h3>
 						</div>
-						<div class="weatherInfo">
-							<div class="temp">18℃</div>
-							<div class="infoDetail">
-								<p>上海-晴天</p>
-								<p>西南风-三级</p>
-								<p>湿度-34cc</p>
-							</div>
+						<div>
+							<div id="chart4b"></div>
+							<h3>
+								<p>123kw</p>
+								<span>总量</span>
+							</h3>
 						</div>
 					</div>
 					<div class="dataName">
-						<span class="name name2">天气情况</span>
-						<span class="weath">上海-晴天</span>
+						<span class="name name5">集团总装机量/总接入户数</span>
+						<span></span>
 					</div>
 				</div>
 				<div class="sideItem">
@@ -105,24 +107,52 @@
 								</ul>
 							</div>
 						</div>
-						<div class="eleData" id="chart5"></div>
+						<div class="eleData">
+							<div>
+								<div id="chart5"></div>
+								<h2>
+									<p >6.84kW</p>
+									<span>装机容量</span>
+								</h2>
+							</div>
+							<div>
+								<div id="chart6"></div>
+								<h2>
+									<p>6.84kW</p>
+									<span>年平均发电量/kw·h</span>
+								</h2>
+							</div>
+						</div>
 					</div>
-					
 				</div>
 			</div>
 			<div class="right">
 				<div class="sideItem">
 					<div class="datacontent" id="chart3"></div>
 					<div class="dataName">
-						<span class="name name4">集团电站发电量数据图</span>
+						<span class="name name4">集团电站月发电量数据图</span>
 						<span></span>
 					</div>
 				</div>
 				<div class="sideItem" style="margin:2% 0;">
-					<div class="datacontent" id="chart4"></div>
+					<div class="datacontent weather">
+						<div class="weatherIcon">
+							<img src="../../img/icon/big-screen-icon/weather-icon1.png" alt="">
+							<p>12-20℃</p>
+						</div>
+						<div class="weatherInfo">
+							<div class="temp">18℃</div>
+							<div class="infoDetail">
+								<p>上海-晴天</p>
+								<p>西南风-三级</p>
+								<p>湿度-34cc</p>
+							</div>
+						</div>
+					</div>
+					
 					<div class="dataName">
-						<span class="name name5">集团总装机量/总接入户数</span>
-						<span></span>
+						<span class="name name2">天气情况</span>
+						<span class="weath">上海-晴天</span>
 					</div>
 				</div>
 				<div class="sideItem">
@@ -189,7 +219,9 @@
 		var myChart2 = echarts.init(document.getElementById('chart2'));
 		var myChart3 = echarts.init(document.getElementById('chart3'));
 		var myChart4 = echarts.init(document.getElementById('chart4'));
+		var myChart4b = echarts.init(document.getElementById('chart4b'));
 		var myChart5 = echarts.init(document.getElementById('chart5'));
+		var myChart6 = echarts.init(document.getElementById('chart6'));
 		var option1 = {
 				toolTip:{},
 		    xAxis: {
@@ -225,38 +257,32 @@
 		        }
 		    }]
 		};
+
 		var option2 = {
-		    xAxis: {
-		        type: 'value',
-		        name:'次',
-		        axisLabel:{
-		        	color:'#fff'
-		        },
-		        axisLine:{
-		        	lineStyle:{
-		        		color:'#fff'
-		        	}
+		    series : [
+		        {
+		            name: '访问来源',
+		            type: 'pie',
+		            hoverAnimation:false,
+		            radius : '60%',
+		            // center: ['50%', '60%'],
+		            data:[
+		                {value:335, name:'逆变器故障'},
+		                {value:310, name:'通讯故障'},
+		                {value:234, name:'电网故障'},
+		            ],
+		            itemStyle: {
+		                emphasis: {
+		                    shadowBlur: 10,
+		                    shadowOffsetX: 0,
+		                    shadowColor: 'rgba(0, 0, 0, 0.5)'
+		                }
+		            }
 		        }
-		    },
-		    yAxis: {
-		        type: 'category',
-		        data: ['电网故障', '通讯故障','逆变器故障' ],
-		        axisLabel:{
-		        	rotate:60,
-		        	color:'#fff',
-		        },
-		        axisLine:{
-		        	lineStyle:{
-		        		color:'#fff'
-		        	}
-		        }
-		    },
-		    series: [{
-		        data: [12, 20, 32],
-		        type: 'bar',
-		        barWidth:20
-		    }]
+		    ]
 		};
+
+
 		var option3 = {
 				toolTip:{},
 		    xAxis: {
@@ -292,147 +318,338 @@
 		        }
 		    }]
 		};
-		var option4 = {
-		    xAxis: {
-		        type: 'category',
-		        data: [1,2,3,4,5,6,7,8,9,10,11,12],
-		        axisLabel:{
-		        	color:'#fff'
-		        },
-		        axisLine:{
-		        	lineStyle:{
-		        		color:'#fff'
-		        	}
-		        }
-		    },
-		    yAxis: {
-		        type: 'value',
-		        axisLabel:{
-		        	color:'#fff'
-		        },
-		        axisLine:{
-		        	lineStyle:{
-		        		color:'#fff'
-		        	}
-		        }
-		    },
-		    series: [{
-		        data: [320, 432, 501, 534, 690, 730, 820,932,1023,1156,1212,1322],
-		        type: 'line'
-		    }]
-		};
-		var scale = 0.5;
-		var echartData = [
-			{
-			    value: 30,
-			    name: '一季度电量'
-			}, {
-			    value: 38,
-			    name: '二季度电量'
-			}, {
-			    value: 35,
-			    name: '三季度电量'
-			}, {
-			    value: 25,
-			    name: '四季度电量'
-			}
-		]
-		var rich = {
-		    yellow: {
-		        color: "#ffc72b",
-		        fontSize: 30 * scale,
-		        padding: [5, 4],
-		        align: 'center'
-		    },
-		    total: {
-		        color: "#ffc72b",
-		        fontSize: 40 * scale,
-		        align: 'center'
-		    },
-		    white: {
-		        color: "#fff",
-		        align: 'center',
-		        fontSize: 12,
-		        padding: [8, 0]
-		    },
-		    blue: {
-		        color: '#49dff0',
-		        fontSize: 12,
-		        align: 'center'
-		    },
-		    hr: {
-		        borderColor: '#0b5263',
-		        width: '100%',
-		        borderWidth: 1,
-		        height: 0,
-		    }
-		}
-		var option5 = {
-		    title: {
-		        text:'总电量(kw/h)',
-		        left:'center',
-		        top:'53%',
-		        // padding:[24,0],
-		        textStyle:{
-		            color:'#fff',
-		            fontSize:12,
-		            align:'center'
-		        }
-		    },
-		    legend: {
-		        selectedMode:false,
-		        formatter: function(name) {
-		            var total = 0; //各科正确率总和
-		            var averagePercent; //综合正确率
-		            echartData.forEach(function(value, index, array) {
-		                total += value.value;
-		            });
-		            return '{total|' + total + '}';
-		        },
-		        data: [echartData[0].name],
-		        // data: ['高等教育学'],
-		        // itemGap: 50,
-		        left: 'center',
-		        top: 'center',
-		        icon: 'none',
-		        align:'center',
-		        textStyle: {
-		            color: "#fff",
-		            fontSize: 20,
-		            rich: rich
-		        },
-		    },
-		    series: [{
-		        name: '发电总量',
-		        type: 'pie',
-		        radius: ['40%', '60%'],
-		        hoverAnimation: false,
-		        color: ['#01ffba', '#0eb140', '#49dff0', '#034079'],
-		        label: {
-		            normal: {
-		                formatter: function(params, ticket, callback) {
-		                    var total = 0; //考生总数量
-		                    var percent = 0; //考生占比
-		                    echartData.forEach(function(value, index, array) {
-		                        total += value.value;
-		                    });
-		                    percent = ((params.value / total) * 100).toFixed(1);
-		                    return '{white|' + params.name + '}\n{hr|}\n{yellow|' + params.value + '}\n{blue|' + percent + '%}';
-		                },
-		                rich: rich
-		            },
-		        },
-		        labelLine: {
-		            normal: {
-		                length: 55 * scale,
-		                length2: 0,
-		                lineStyle: {
-		                    color: '#0b5263'
-		                }
+		// var option4 = {
+		//     xAxis: {
+		//         type: 'category',
+		//         data: [1,2,3,4,5,6,7,8,9,10,11,12],
+		//         axisLabel:{
+		//         	color:'#fff'
+		//         },
+		//         axisLine:{
+		//         	lineStyle:{
+		//         		color:'#fff'
+		//         	}
+		//         }
+		//     },
+		//     yAxis: [{
+		//     		name:'总装机量',
+		//         type: 'value',
+		//         axisLabel:{
+		//         	color:'#fff'
+		//         },
+		//         axisLine:{
+		//         	lineStyle:{
+		//         		color:'#fff'
+		//         	}
+		//         }
+		//     },{	
+		//     		name:'总户数',
+		//         type: 'value',
+		//         axisLabel:{
+		//         	color:'#fff'
+		//         },
+		//         axisLine:{
+		//         	lineStyle:{
+		//         		color:'#fff'
+		//         	}
+		//         }
+		//     }],
+		//     series: [{
+		//     		name:'总装机量',
+		//         data: [320, 432, 501, 534, 690, 730, 820,932,1023,1156,1212,1322],
+		//         type: 'line'
+		//     },{
+		//     		name:'总户数',
+		//         data: [34, 23, 12, 34, 56, 67, 78,98,123,231,12,32],
+		//         type: 'line',
+		//         lineStyle:{
+
+		//         }
+		//     }]
+		// };
+		var labelTop = {
+		    normal : {
+		        label : {
+		            show : true,
+		            position : 'center',
+		            formatter : '{b}',
+		            textStyle: {
+		                baseline : 'bottom'
 		            }
 		        },
-		        data: echartData
+		        labelLine : {
+		            show : false
+		        }
+		    }
+		};
+		var labelFromatter = {
+		    normal : {
+		        label : {
+		            formatter : function (params){
+		                return 100 - params.value + '%'
+		            },
+		            textStyle: {
+		                baseline : 'top'
+		            }
+		        }
+		    },
+		}
+		var labelBottom = {
+		    normal : {
+		        color: '#ccc',
+		        label : {
+		            show : true,
+		            position : 'center'
+		        },
+		        labelLine : {
+		            show : false
+		        }
+		    },
+		};
+		var radius = [55, 70];
+		var option4 = {
+		    // toolbox: {
+		    //     show : true,
+		    // },
+		    title : {
+	        text: '421W',
+	        subtext: '总装机量',
+	        x: 'center',
+	        y:'40%',
+	        textStyle: {
+	            fontWeight: 'normal',
+	            color: '#ffffff',
+	            fontSize: 20
+	        },
+	        subTextStyle:{
+	        	fontSize:16,
+	        	color:'#fff'
+	        }
+	    	},
+		   series :[{
+		            type : 'pie',
+            		hoverAnimation:false,
+		            radius : radius,
+		            label:{
+		            	normal:{
+		            		show:false
+		            	}
+		            },
+		            labelLine:{
+		                normal:{
+		                show:false,    
+		                }
+		                
+		            },
+		            itemStyle : labelFromatter,
+		            data : [
+		                {name:'other', value:75, itemStyle : labelBottom},
+		                {name:'剧情', value:55,itemStyle : labelTop}
+		            ]
 		    }]
+		};var option4b = {
+		    // toolbox: {
+		    //     show : true,
+		    // },
+		    title : {
+	        text: '421W',
+	        subtext: '总户数',
+	        x: 'center',
+	        y:'40%',
+	        textStyle: {
+	            fontWeight: 'normal',
+	            color: '#ffffff',
+	            fontSize: 20
+	        },
+	        subTextStyle:{
+	        	fontSize:16,
+	        	color:'#fff'
+	        }
+	    	},
+		   series :[{
+		            type : 'pie',
+            		hoverAnimation:false,
+		            radius : radius,
+		            label:{
+		            	normal:{
+		            		show:false
+		            	}
+		            },
+		            labelLine:{
+		                normal:{
+		                show:false,    
+		                }
+		                
+		            },
+		            itemStyle : labelFromatter,
+		            data : [
+		                {name:'other', value:75, itemStyle : labelBottom},
+		                {name:'剧情', value:25,itemStyle : labelTop}
+		            ]
+		    }]
+		};
+
+		var labelTop = {
+		    normal : {
+		        label : {
+		            show : true,
+		            position : 'center',
+		            formatter : '{b}',
+		            textStyle: {
+		                baseline : 'bottom'
+		            }
+		        },
+		        labelLine : {
+		            show : false
+		        }
+		    }
+		};
+		var labelFromatter = {
+		    normal : {
+		        label : {
+		            formatter : function (params){
+		                return 100 - params.value + '%'
+		            },
+		            textStyle: {
+		                baseline : 'top'
+		            }
+		        }
+		    },
+		}
+		var labelBottom = {
+		    normal : {
+		        color: '#ccc',
+		        label : {
+		            show : true,
+		            position : 'center'
+		        },
+		        labelLine : {
+		            show : false
+		        }
+		    },
+		};
+		var radius = [55, 70];
+		var option5 = {
+		    // toolbox: {
+		    //     show : true,
+		    // },
+		    title : {
+	        text: '421W',
+	        subtext: '当前功率',
+	        x: 'center',
+	        y:'40%',
+	        textStyle: {
+	            fontWeight: 'normal',
+	            color: '#ffffff',
+	            fontSize: 20
+	        },
+	        subTextStyle:{
+	        	fontSize:16,
+	        	color:'#fff'
+	        }
+	    	},
+		   series :{
+		            type : 'pie',
+            		hoverAnimation:false,
+		            radius : radius,
+		            label:{
+		            	normal:{
+		            		show:false
+		            	}
+		            },
+		            labelLine:{
+		                normal:{
+		                show:false,    
+		                }
+		                
+		            },
+		            itemStyle : labelFromatter,
+		            data : [
+		                {name:'other', value:75, itemStyle : labelBottom},
+		                {name:'剧情', value:25,itemStyle : labelTop}
+		            ]
+		    }
+		};
+		var labelTop = {
+		    normal : {
+		        label : {
+		            show : true,
+		            position : 'center',
+		            formatter : '{b}',
+		            textStyle: {
+		                baseline : 'bottom'
+		            }
+		        },
+		        labelLine : {
+		            show : false
+		        }
+		    }
+		};
+		var labelFromatter = {
+		    normal : {
+		        label : {
+		            formatter : function (params){
+		                return 100 - params.value + '%'
+		            },
+		            textStyle: {
+		                baseline : 'top'
+		            }
+		        }
+		    },
+		}
+		var labelBottom = {
+		    normal : {
+		        color: '#ccc',
+		        label : {
+		            show : true,
+		            position : 'center'
+		        },
+		        labelLine : {
+		            show : false
+		        }
+		    },
+		};
+		var radius = [55, 70];
+		var option6 = {
+		    // toolbox: {
+		    //     show : true,
+		    // },
+		    title : {
+	        text: '421W',
+	        subtext: '年均发电量',
+	        x: 'center',
+	        y:'40%',
+	        textStyle: {
+	            fontWeight: 'normal',
+	            color: '#ffffff',
+	            fontSize: 20
+	        },
+	        subTextStyle:{
+	        	fontSize:16,
+	        	color:'#fff'
+	        }
+	    	},
+		   series :{
+		            type : 'pie',
+            		hoverAnimation:false,
+		            radius : radius,
+		            label:{
+		            	normal:{
+		            		show:false
+		            	}
+		            },
+		            labelLine:{
+		                normal:{
+		                show:false,    
+		                }
+		                
+		            },
+		            itemStyle : labelFromatter,
+		            data : [
+		                {name:'other', value:75, itemStyle : labelBottom},
+		                {name:'剧情', value:25,itemStyle : labelTop}
+		            ]
+		    }
 		};
 
 
@@ -440,7 +657,9 @@
 		myChart2.setOption(option2)
 		myChart3.setOption(option3)
 		myChart4.setOption(option4)
+		myChart4b.setOption(option4b)
 		myChart5.setOption(option5)
+		myChart6.setOption(option6)
 	</script>
 </body>
 </html>

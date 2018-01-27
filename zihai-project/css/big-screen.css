@@ -155,7 +155,7 @@ html,body{
 	transform: translate(-50%,-100%);
 }
 .mapData .areaData{
-	flex: 1.2;
+	flex: 1;
 	display: flex;
 	flex-direction: column;
 	padding-left: 1.5rem;
@@ -164,6 +164,7 @@ html,body{
 .mapData .areaData .areaName{
 	flex: 1;
 	color:#fff;
+	padding-top: 1.3rem;
 }
 .mapData .areaData .areaName h3{
 	font-size: 1rem;
@@ -187,6 +188,33 @@ html,body{
 	flex:3;
 	display: flex;
 	align-items: center;
+}
+.mapData .eleData{
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+}
+.mapData .eleData>div{
+	flex-basis: 50%;
+	height: 100%;
+}
+.mapData .eleData>div div{
+	width:100%;
+	height: 70%;
+}
+.mapData .eleData>div h2{
+	width:100%;
+	height: 28%;
+	text-align: center;
+	color: #fff;
+	font-weight: normal;
+}
+.mapData .eleData>div h2 p{
+	font-size: 1.7rem;
+}
+.mapData .eleData>div h2 span{
+	font-size: 1rem;
+	color:#59d5f1;
 }
 .areaDataInfo .userPic {
 	width:45%;
@@ -281,6 +309,31 @@ html,body{
 }
 .dataName .weath{
 	color:#7cfff4;
+}
+.chart4Con{
+	display: flex;
+	align-items: center;
+	justify-content: space-around;
+}
+.chart4Con>div{
+	flex-basis: 50%;
+	height: 100%;
+}
+.chart4Con>div>div{
+	width:100%;
+	height: 75%;
+}
+.chart4Con>div>h3{
+	font-weight: normal;
+	color:#fff;
+	text-align: center;
+}
+.chart4Con>div>h3 p{
+	font-size: 1.7rem;
+}
+.chart4Con>div>h3 span{
+	font-size: 1rem;
+	color:#59d5f1;
 }
 .weather{
 	display: flex;
