@@ -17,6 +17,13 @@
 		<div class="main clear">
 			<div class="left">
 				<div class="sideItem">
+					<div class="timeSelect">
+						<select>
+							<option value="">2017</option>
+							<option value="">2018</option>
+							<option value="">2019</option>
+						</select>
+					</div>
 					<div class="datacontent" id="chart1"></div>
 					<div class="dataName">
 						<span class="name">集团电站年发电量数据图</span>
@@ -53,6 +60,7 @@
 				</div>
 			</div>
 			<div class="mainMap">
+				<iframe src="map.html" frameborder="0"></iframe>
 				<div class="userAmount">
 					<div class="amount">
 						<span>总接入光伏户数</span>
@@ -67,6 +75,7 @@
 					</div>
 					<div class="search">
 						<div class="searchBtn"></div>
+						<div class="searchForm formHide"><input type="text" placeholder="请输入电站名称"></div>
 					</div>
 				</div>
 				<div class="mapData">
@@ -128,6 +137,18 @@
 			</div>
 			<div class="right">
 				<div class="sideItem">
+					<div class="timeSelect">
+						<select>
+							<option value="">2017</option>
+							<option value="">2018</option>
+							<option value="">2019</option>
+						</select>
+						<select>
+							<option value="">01</option>
+							<option value="">02</option>
+							<option value="">03</option>
+						</select>
+					</div>
 					<div class="datacontent" id="chart3"></div>
 					<div class="dataName">
 						<span class="name name4">集团电站月发电量数据图</span>
@@ -149,7 +170,6 @@
 							</div>
 						</div>
 					</div>
-					
 					<div class="dataName">
 						<span class="name name2">天气情况</span>
 						<span class="weath">上海-晴天</span>
@@ -192,6 +212,9 @@
 	<script>
 		$('.toggleBtn').click(function(){
 			$('.mapData').toggleClass('mapDataHide');
+		})
+		$('.searchBtn').click(function(){
+			$('.searchForm').toggleClass('formHide')
 		})
 
 		var t = null;
@@ -318,55 +341,6 @@
 		        }
 		    }]
 		};
-		// var option4 = {
-		//     xAxis: {
-		//         type: 'category',
-		//         data: [1,2,3,4,5,6,7,8,9,10,11,12],
-		//         axisLabel:{
-		//         	color:'#fff'
-		//         },
-		//         axisLine:{
-		//         	lineStyle:{
-		//         		color:'#fff'
-		//         	}
-		//         }
-		//     },
-		//     yAxis: [{
-		//     		name:'总装机量',
-		//         type: 'value',
-		//         axisLabel:{
-		//         	color:'#fff'
-		//         },
-		//         axisLine:{
-		//         	lineStyle:{
-		//         		color:'#fff'
-		//         	}
-		//         }
-		//     },{	
-		//     		name:'总户数',
-		//         type: 'value',
-		//         axisLabel:{
-		//         	color:'#fff'
-		//         },
-		//         axisLine:{
-		//         	lineStyle:{
-		//         		color:'#fff'
-		//         	}
-		//         }
-		//     }],
-		//     series: [{
-		//     		name:'总装机量',
-		//         data: [320, 432, 501, 534, 690, 730, 820,932,1023,1156,1212,1322],
-		//         type: 'line'
-		//     },{
-		//     		name:'总户数',
-		//         data: [34, 23, 12, 34, 56, 67, 78,98,123,231,12,32],
-		//         type: 'line',
-		//         lineStyle:{
-
-		//         }
-		//     }]
-		// };
 		var labelTop = {
 		    normal : {
 		        label : {
