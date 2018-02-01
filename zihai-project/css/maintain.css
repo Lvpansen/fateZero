@@ -46,7 +46,6 @@ iframe{
 .main{
 	width:100%;
 	height: 85%;
-	border-top: .7rem solid #0c182a;
 	box-sizing: border-box;
 	position: relative;
 }
