@@ -108,11 +108,65 @@
 							<li><span>》</span></li>
 						</ul>
 					</li>
+					<li class="dataItem">
+						<ul class="clear">
+							<li>盐城大丰草场</li>
+							<li>15kw</li>
+							<li>5.6kw</li>
+							<li>58kw</li>
+							<li><i class="green"></i></li>
+							<li><span>》</span></li>
+						</ul>
+					</li>
+					<li class="dataItem">
+						<ul class="clear">
+							<li>盐城大丰草场</li>
+							<li>15kw</li>
+							<li>5.6kw</li>
+							<li>58kw</li>
+							<li><i class="green"></i></li>
+							<li><span>》</span></li>
+						</ul>
+					</li>
 				</ul>
+				<div class="pagenation">
+					<ul class="pages clear">
+						<li class="indexPage">首页</li>
+						<li class="prevPage">上一页</li>
+						<li class="active">1</li>
+						<li>2</li>
+						<li>3</li>
+						<li>4</li>
+						<li class="more">···</li>
+						<li>10</li>
+						<li class="nextPage">下一页</li>
+						<li class="lastPage">末页</li>
+					</ul>
+				</div>
+				<div class="chart">
+					
+				</div>
 			</div>
-			<div class="mainContent mainContentCenter">
-				
-			</div>
+			<ul class="mainContent mainContentCenter">
+				<li>
+					<div class="mainEleData">
+						<span>当前功率</span>
+						<p><span class="dataNum">4.32</span>Mw</p>
+					</div>
+				</li>
+				<li>
+					<div class="mainEleData">
+						<span>今日发电量</span>
+						<p><span class="dataNum">4685.2</span>Kwh</p>
+					</div>
+				</li>
+				<li>
+					<div class="mainEleData">
+						<span>当值人员</span>
+						<p><span class="dataNum">12</span>人</p>
+					</div>
+				</li>
+			</ul>
 			<div class="mainContent mainContentRight">
 				<h2>电站报警中心</h2>
 				<ul class="dataList">
@@ -195,7 +249,39 @@
 							<li><span>》</span></li>
 						</ul>
 					</li>
+					<li class="dataItem">
+						<ul class="clear">
+							<li>盐城大丰草场</li>
+							<li>设备通信中断</li>
+							<li class="green">处理中</li>
+							<li class="orange">重要</li>
+							<li><span>》</span></li>
+						</ul>
+					</li>
+					<li class="dataItem">
+						<ul class="clear">
+							<li>盐城大丰草场</li>
+							<li>设备通信中断</li>
+							<li>已处理</li>
+							<li class="orange">重要</li>
+							<li><span>》</span></li>
+						</ul>
+					</li>
 				</ul>
+				<div class="pagenation">
+					<ul class="pages clear">
+						<li class="indexPage">首页</li>
+						<li class="prevPage">上一页</li>
+						<li class="active">1</li>
+						<li>2</li>
+						<li>3</li>
+						<li>4</li>
+						<li class="more">···</li>
+						<li>10</li>
+						<li class="nextPage">下一页</li>
+						<li class="lastPage">末页</li>
+					</ul>
+				</div>
 			</div>
 		</div>
 		<ul class="mainContentBottom clear">
@@ -216,7 +302,8 @@
 	       	var year = dt.getFullYear();
 	       	var mon = dt.getMonth();
 			var month = mon< 9 ? "0" + (mon + 1) : mon + 1;
-			var date = dt.getDate();
+			var d = dt.getDate();
+			var date = d < 10 ? "0" + d : d;
 			var h = dt.getHours();
 			var hour = h < 10 ? "0" + h : h;
 			var min = dt.getMinutes();
