@@ -152,7 +152,7 @@ iframe{
 .mainContentCenter .searchContainer input:-moz-placeholder,
 .mainContentCenter .searchContainer input::-webkit-input-placeholder,
 .mainContentCenter .searchContainer input:-ms-input-placeholder {
-    color: #ccc;
+    color: #ffffff;
 }
 .mainContentBottom{
 	width:100%;
