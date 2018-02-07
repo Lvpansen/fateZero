@@ -143,7 +143,7 @@
 						<li class="lastPage">末页</li>
 					</ul>
 				</div>
-				<div class="chart">
+				<div class="chart" id="chart1">
 					
 				</div>
 			</div>
@@ -169,7 +169,17 @@
 					</li>
 				</ul>
 				<div class="searchContainer">
-					
+					<select>
+						<option value="">上海市</option>
+						<option value="">江苏省</option>
+						<option value="">浙江省</option>
+					</select>
+					<select>
+						<option value="">南京</option>
+						<option value="">苏州</option>
+						<option value="">无锡</option>
+					</select>
+					<input type="text" placeholder="请输入电站名称或运维人员姓名">
 				</div>
 			</div>
 			<div class="mainContent mainContentRight">
@@ -287,6 +297,9 @@
 						<li class="lastPage">末页</li>
 					</ul>
 				</div>
+				<div class="chart" id="chart2">
+					
+				</div>
 			</div>
 		</div>
 		<ul class="mainContentBottom clear">
@@ -318,6 +331,159 @@
 	       $('.time').html(year + '-' + month + '-' + date +' '+ hour + ':' + minute +':'+second)
 	       t = setTimeout(time,1000); //设定定时器，循环执行             
 	    } 
+	</script>
+	<script>
+		var myChart1 = echarts.init(document.getElementById('chart1'));
+		var myChart2 = echarts.init(document.getElementById('chart2'));
+		var option1 = {
+		   // tooltip : {
+		   //     trigger: 'item',
+		   //     formatter: "{a} <br/>{b} : {c} ({d}%)"
+		   // },
+		    color:['#8fc31f','#f35833','#00ccff'],
+		    legend: {
+		        orient: 'center',
+		        x: '68%',
+		        y:'center',
+		        data: ['正常电站','异常电站','断连电站'],
+		        formatter:function(name){
+		        	var oa = option1.series[0].data;
+		        	var num = oa[0].value + oa[1].value + oa[2].value;
+		        	for(var i = 0; i < option1.series[0].data.length; i++){
+	                    if(name==oa[i].name){
+	                    	return name + ' : ' + oa[i].value ;
+	                    }
+		        	}
+		        }
+		    },
+		    title : {
+	        	text: '2047个',
+		        subtext: '电站总数',
+		        x: '33%',
+		        y:'40%',
+		        textStyle: {
+		            fontWeight: 'normal',
+		            color: '#333333',
+		            fontSize: 20
+		        },
+		        subTextStyle:{
+		        	fontSize:16,
+		        	color:'#333333'
+		        }
+	    	},
+		    series : [
+		        {
+		            name: '签到比例分析',
+		            type: 'pie',
+		            hoverAnimation:false,
+		            radius : [70,85],
+		            center: ['40%', '50%'],
+		            data:[
+		                {name:'正常电站', value:1180},
+		                {name:'异常电站', value:525},
+		                {name:'断连电站', value:328},
+		            ],
+		            label:{
+		            	normal:{
+		            		show:false
+		            	}
+		            },
+		            labelLine:{
+		                normal:{
+		                show:false,    
+		                }
+		                
+		            },
+		            itemStyle: {
+		                emphasis: {
+		                    shadowBlur: 10,
+		                    shadowOffsetX: 0,
+		                    shadowColor: 'rgba(0, 0, 0, 0.5)'
+		                }
+		            },
+		            itemStyle: {
+		                normal: {
+		                    label:{ 
+	                            show: true, 
+	//	                            position:'inside',
+	                            formatter: '{b} : {c} ({d}%)' 
+	                        }
+		                },
+	                    labelLine :{show:true}
+		            }
+		        }
+		    ]
+		};
+		var option2 = {
+		   // tooltip : {
+		   //     trigger: 'item',
+		   //     formatter: "{a} <br/>{b} : {c} ({d}%)"
+		   // },
+		    color:['#8fc31f','#f35833','#00ccff','#00cc55'],
+		    legend: {
+		        orient: 'center',
+		        x: '68%',
+		        y:'center',
+		        data: ['严重警告','重要警告','次要警告','一般警告'],
+		        formatter:function(name){
+		        	var oa = option2.series[0].data;
+		        	var num = oa[0].value + oa[1].value + oa[2].value+ oa[3].value;
+		        	for(var i = 0; i < option2.series[0].data.length; i++){
+	                    if(name==oa[i].name){
+	                    	return name + ' : ' + oa[i].value ;
+	                    }
+		        	}
+		        }
+		    },
+		    series : [
+		        {
+		            name: '签到比例分析',
+		            type: 'pie',
+		            hoverAnimation:false,
+		            radius : [20,100],
+		            center: ['40%', '50%'],
+            		roseType : 'radius',
+		            data:[
+		                {name:'严重警告', value:180},
+		                {name:'重要警告', value:225},
+		                {name:'次要警告', value:328},
+		                {name:'一般警告', value:428},
+		            ],
+		            label:{
+		            	normal:{
+		            		position:'inner',
+		            		formatter:'{d}%'
+		            	}
+		            },
+		            labelLine:{
+		                normal:{
+		                	show:false,    
+		                }
+		                
+		            },
+		            itemStyle: {
+		                emphasis: {
+		                    shadowBlur: 10,
+		                    shadowOffsetX: 0,
+		                    shadowColor: 'rgba(0, 0, 0, 0.5)'
+		                }
+		            },
+		            itemStyle: {
+		                normal: {
+		                    label:{ 
+	                            show: true, 
+	//	                            position:'inside',
+	                            formatter: '{b} : {c} ({d}%)' 
+	                        }
+		                },
+	                    labelLine :{show:true}
+		            }
+		        }
+		    ]
+		};
+
+		myChart1.setOption(option1)
+		myChart2.setOption(option2)
 	</script>
 </body>
 </html>

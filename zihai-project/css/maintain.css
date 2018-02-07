@@ -127,13 +127,32 @@ iframe{
 }
 .mainContentCenter .searchContainer{
 	position: absolute;
-	bottom: -60px;
-	left: 0;
-	width:360px;
-	height: 36px;
-	background: #fefefe;
-	border-radius: 18px;
-	box-shadow: 0 0 0 8px rgba(0,0,0,0.1);
+    bottom: -60px;
+    left: 0;
+    width: 360px;
+    height: 36px;
+    line-height: 36px;
+    padding-left: 10px;
+    background: #fefefe;
+    border-radius: 18px;
+    box-shadow: 0 0 0 8px rgba(0,0,0,0.1);
+}
+.mainContentCenter .searchContainer select{
+	border:none;
+}
+.mainContentCenter .searchContainer input{
+	background: #233756;
+    color: #fff;
+    width: 200px;
+    height: 24px;
+    border-radius: 12px;
+    padding: 0 12px;
+}
+
+.mainContentCenter .searchContainer input:-moz-placeholder,
+.mainContentCenter .searchContainer input::-webkit-input-placeholder,
+.mainContentCenter .searchContainer input:-ms-input-placeholder {
+    color: #ccc;
 }
 .mainContentBottom{
 	width:100%;
