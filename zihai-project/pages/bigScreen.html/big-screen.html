@@ -34,15 +34,15 @@
 						<div>
 							<div id="chart4"></div>
 							<h3>
-								<p>123kw</p>
-								<span>总量</span>
+								<p><span>总装机功率</span>123kw</p>
+								<!-- <span>总量</span> -->
 							</h3>
 						</div>
 						<div>
 							<div id="chart4b"></div>
 							<h3>
-								<p>123kw</p>
-								<span>总量</span>
+								<p><span>累计发电量</span>123kw</p>
+								<!-- <span>总量</span> -->
 							</h3>
 						</div>
 					</div>
@@ -52,7 +52,13 @@
 					</div>
 				</div>
 				<div class="sideItem">
-					<div class="datacontent" id="chart2"></div>
+					<div class="datacontent chart5Con">
+						<div id="chart2"></div>
+						<h3>
+							<p style=""><span>故障总数</span>1235</p>
+							<!-- <span>总量</span> -->
+						</h3>
+					</div>
 					<div class="dataName">
 						<span class="name name3">故障电站数目图</span>
 						<span></span>
@@ -237,8 +243,9 @@
 	       	var dt = new Date();
 	       	var year = dt.getFullYear();
 	       	var mon = dt.getMonth();
-			var month = mon< 9 ? "0" + (mon + 1) : mon + 1;
-			var date = dt.getDate();
+			var month = mon< 10 ? "0" + (mon + 1) : mon + 1;
+			var dat = dt.getDate();
+			var date = dat< 10 ? "0" + dat : dat;
 			var h = dt.getHours();
 			var hour = h < 10 ? "0" + h : h;
 			var min = dt.getMinutes();
@@ -258,7 +265,12 @@
 		var myChart5 = echarts.init(document.getElementById('chart5'));
 		var myChart6 = echarts.init(document.getElementById('chart6'));
 		var option1 = {
-				toolTip:{},
+			toolTip:{},
+			grid:{
+				left:'1%',
+				bottom:'30',
+				containLabel:true
+			},
 		    xAxis: {
 		        type: 'category',
 		        name:'月',
@@ -276,7 +288,8 @@
 		        type: 'value',
 		        name:'(KW)',
 		        axisLabel:{
-		        	color:'#fff'
+		        	color:'#fff',
+		        	display:'none'
 		        },
 		        axisLine:{
 		        	lineStyle:{
@@ -285,7 +298,7 @@
 		        }
 		    },
 		    series: [{
-		        data: [120, 200, 150, 80, 70, 510, 130,230,100,350,320,400],
+		        data: [120000, 200000, 150000, 80000, 70000, 510000, 130000,230000,100000,350000,320000,400000],
 		        type: 'bar',
 		        itemStyle:{
 		            color:'#0aa6bf'
@@ -320,6 +333,11 @@
 
 		var option3 = {
 				toolTip:{},
+			grid:{
+				left:'1%',
+				bottom:'30',
+				containLabel:true
+			},
 		    xAxis: {
 		        type: 'category',
 		        name:'日',
@@ -346,7 +364,7 @@
 		        }
 		    },
 		    series: [{
-		        data: [120, 200, 150, 80, 70, 510, 130,230,100,350,320,400,120, 200, 150, 80, 70, 510, 130,230,100,350,320,400,255,505,600,465,200,100],
+		        data: [120000, 200000, 150000, 80000, 70000, 510000, 130000,230000,100000,350000,320000,400000,120000, 200000, 150000, 80000, 70000, 510000, 130000,230000,100000,350000,320000,400000,250005,500005,600000,460005,200000,100000],
 		        type: 'bar',
 		        itemStyle:{
 		            color:'#0aa6bf'
@@ -398,19 +416,19 @@
 		    //     show : true,
 		    // },
 		    title : {
-	        text: '421W',
-	        subtext: '总装机量',
-	        x: 'center',
-	        y:'40%',
-	        textStyle: {
-	            fontWeight: 'normal',
-	            color: '#ffffff',
-	            fontSize: 20
-	        },
-	        subTextStyle:{
-	        	fontSize:16,
-	        	color:'#fff'
-	        }
+		        text: '421W',
+		        subtext: '当前发电功率',
+		        x: 'center',
+		        y:'40%',
+		        textStyle: {
+		            fontWeight: 'normal',
+		            color: '#ffffff',
+		            fontSize: 20
+		        },
+		        subTextStyle:{
+		        	fontSize:16,
+		        	color:'#fff'
+		        }
 	    	},
 		   series :[{
 		            type : 'pie',
@@ -440,7 +458,7 @@
 		    // },
 		    title : {
 	        text: '421W',
-	        subtext: '总户数',
+	        subtext: '累计收益',
 	        x: 'center',
 	        y:'40%',
 	        textStyle: {

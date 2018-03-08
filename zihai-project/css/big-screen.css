@@ -31,7 +31,7 @@ iframe{
 	width:60%;
 	height: 100%;
 	margin: 0 auto;
-	background: url(../img/icon/big-screen-icon/title-icon.png) no-repeat center center;
+	background: url(../img/icon/maintain-icon/title-icon.png) no-repeat center center;
 	background-size: cover;
 }
 .header .time{
@@ -209,6 +209,7 @@ iframe{
 	flex:3;
 	display: flex;
 	align-items: center;
+	overflow:hidden;
 }
 .mapData .eleData{
 	display: flex;
@@ -240,6 +241,7 @@ iframe{
 .areaDataInfo .userPic {
 	width:45%;
 	box-sizing: border-box;
+	padding: 0.7rem;
 }
 .areaDataInfo .userPic img{
 	max-width: 100%;
@@ -373,6 +375,22 @@ iframe{
 .chart4Con>div>h3 span{
 	font-size: 1rem;
 	color:#59d5f1;
+}
+.chart4Con>div>h3 p span{
+	font-size: 12px;
+	color:#fff;
+}
+.chart5Con>div{
+	height: 87%;
+}
+.chart5Con h3{
+	text-align: center;
+	font-weight: normal;
+	color: #fff;
+	font-size: 1.5rem;
+}
+.chart5Con h3 span{
+	font-size: 0.8rem;
 }
 .weather{
 	display: flex;
