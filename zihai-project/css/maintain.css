@@ -357,3 +357,139 @@ iframe{
 	width:100%;
 	height: 31%;
 }
+
+.dialog{
+	position: fixed;
+	top:0;
+	left: 0;
+	width:100%;
+	height: 100%;
+	background-color: rgba(0,0,0,0.5);
+	z-index: 999;
+}
+.dialog .dialogContent{
+	width:70%;
+	/*height: 200px;*/
+	position: absolute;
+	top:50%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+	background-color: #fff;
+	padding:12px;
+}
+.dia-head{
+	padding-bottom: 12px;
+}
+.dia-head .btnList{
+	float: right;
+}
+.dia-head .btnList span{
+	font-size: 12px;
+	padding:0px 16px;
+	display: inline-block;
+	height: 28px;
+	line-height: 28px;
+	background-color: #172a46;
+	color:#fff;
+	border-radius: 4px;
+}
+.dia-nav{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border-bottom: 1px solid #999;
+	padding-bottom: 14px;
+}
+.dia-nav li{
+	flex:1;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.dia-nav li+li:before{
+	content: '';
+	display: inline-block;
+	height: 28px;
+	width: 1px;
+	background-color: #999;
+}
+.dia-nav li>div{
+	flex:1;
+	/*text-align: center;*/
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.dia-nav li>div:before{
+	content: '';
+	display: inline-block;
+	width:27px;
+	height: 37px;
+	border:1px solid #333;
+	margin-right: 6px;
+}
+
+.dia-detail-list{
+	display: flex;
+	justify-content: space-between;
+	padding-top: 12px;
+}
+.dia-detail-list>li{
+	background-color: #f8f8f8;
+	min-height: 200px;
+	flex-basis: 32%;
+}
+.dia-detail-list li h3{
+	height: 36px;
+	line-height: 36px;
+	font-weight: normal;
+	font-size: 16px;
+	padding-left: 12px;
+	border-bottom: 1px solid #999;
+}
+
+.weather{
+	display: flex;
+	height: 160px;
+	justify-content: center;
+	align-items: center;
+}
+.weather>div{
+	flex: 1;
+	text-align: center;
+}
+.weatherPic i{
+	width:60px;
+	height: 60px;
+	display: inline-block;
+	border:1px solid #999;
+}
+.weatherDetail p{
+	font-size: 14px;
+}
+.weatherDetail .temp{
+	font-size: 30px;
+}
+
+
+.saveItems{
+	padding:8px;
+}
+.saveItems li{
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding:6px;
+}
+.saveItems li .saveItemName{
+	display: table;
+	font-size: 14px;
+}
+.saveItems li .saveItemName:before{
+	vertical-align: middle;
+	content: '';
+	display: inline-block;
+	height: 22px;
+	width:22px;
+	border:1px solid #999;
+}
