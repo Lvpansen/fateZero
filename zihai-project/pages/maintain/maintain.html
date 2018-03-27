@@ -309,6 +309,7 @@
 		</ul>
 		<div class="dialog">
 			<div class="dialogContent">
+				<span class="close">×</span>
 				<div class="dia-head clear">
 					<div class="btnList">
 						<span>历史报警</span>
@@ -350,10 +351,12 @@
 					</li>
 				</ul>
 				<div class="dia-main">
-					<select>
-						<option value="">发电功率</option>
+					<select class="dia-area">
+						<option value="1">发电功率</option>
+						<option value="2">发电量</option>
 					</select>
 					<div id="chart3"></div>
+					<div id="chart4"></div>
 					<div class="chartName">
 						<div class="timeSelect">
 							2018-03-28
@@ -423,8 +426,8 @@
 			$('.dataList .dataItem').click(function(){
 				$('.dialog').toggleClass('dia-show')
 			})
-			$('.dialog').click(function(){
-				$(this).removeClass('dia-show')
+			$('.dialog .close').click(function(){
+				$('.dialog').removeClass('dia-show')
 			})
 			$('.currentState').click(function(){
 				$('.mainContentBottom li').removeClass('active');
@@ -443,6 +446,20 @@
 				$(this).addClass('active');
 				$('.mainContentLeft').addClass('hide');
 				$('.mainContentRight').addClass('hide');
+			})
+			$('.dia-area').change(function(){
+				var val = $(this).val();
+				if (val === '1') {
+					$('#chart3').css('display','block')
+					$('#chart4').css('display','none')
+					$('.chartName span').html('当日电量18kwh')
+				} else {
+					$('#chart4').css('display','block')
+					$('#chart3').css('display','none')
+					var initChart = echarts.init(document.getElementById('chart4'));
+					initChart.setOption(option4);
+					$('.chartName span').html('当月电量541kwh')
+				}
 			})
 		})
 
@@ -474,6 +491,7 @@
 		var myChart1 = echarts.init(document.getElementById('chart1'));
 		var myChart2 = echarts.init(document.getElementById('chart2'));
 		var myChart3 = echarts.init(document.getElementById('chart3'));
+		// var myChart4 = echarts.init(document.getElementById('chart4'));
 		var option1 = {
 		   // tooltip : {
 		   //     trigger: 'item',
@@ -743,9 +761,73 @@
 		    }]
 		};
 
+		var option4 = {
+		    toolbox: {
+		        show: true,
+		        feature: {
+		            restore: {
+		                show: true
+		            },
+		            saveAsImage: {
+		                show: true,
+		                title:'保存'
+		            }
+		        }
+		    },
+			grid:{
+				left:'3%',
+				bottom:'30',
+				containLabel:true
+			},
+		    xAxis: {
+		        type: 'category',
+		        name:'日',
+		        data: [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30],
+		        axisLabel:{
+		        	color:'#666'
+		        },
+		        axisLine:{
+		        	lineStyle:{
+		        		color:'#666'
+		        	}
+		        }
+		    },
+		    yAxis: {
+		        type: 'value',
+		        name:'(KW)',
+		        axisLabel:{
+		        	color:'#666',
+		        },
+		        axisLine:{
+		        	lineStyle:{
+		        		color:'#666'
+		        	}
+		        }
+		    },
+		    series: [{
+		        data: [12, 2, 15, 8, 7, 51, 13,23,1,35,32,4,12, 2, 15, 8, 7, 51, 13,23,1,35,32,4,25,55,6,46,2,1],
+		        type: 'bar',
+		        itemStyle:{
+		            color:'#c33430',
+		            normal:{
+			            label: {
+			                show: true,
+			                textStyle: {
+			                    fontWeight: 'bolder',
+			                    fontSize: '12',
+			                    fontFamily: '微软雅黑'
+			                },
+			                position: 'top'
+			            },
+		            }
+		        }
+		    }]
+		};
+
 		myChart1.setOption(option1)
 		myChart2.setOption(option2)
 		myChart3.setOption(option3)
+		// myChart4.setOption(option4)
 	</script>
 </body>
 </html>
