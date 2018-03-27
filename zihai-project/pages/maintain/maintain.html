@@ -168,7 +168,7 @@
 						</div>
 					</li>
 				</ul>
-				<div class="searchContainer">
+				<!-- <div class="searchContainer">
 					<select>
 						<option value="">上海市</option>
 						<option value="">江苏省</option>
@@ -180,7 +180,7 @@
 						<option value="">无锡</option>
 					</select>
 					<input type="text" placeholder="请输入电站名称或运维人员姓名">
-				</div>
+				</div> -->
 			</div>
 			<div class="mainContent mainContentRight">
 				<h2>电站报警中心</h2>
@@ -350,7 +350,16 @@
 					</li>
 				</ul>
 				<div class="dia-main">
-					
+					<select>
+						<option value="">发电功率</option>
+					</select>
+					<div id="chart3"></div>
+					<div class="chartName">
+						<div class="timeSelect">
+							2018-03-28
+						</div>
+						<span>当日电量18.00kwh</span>
+					</div>
 				</div>
 				<ul class="dia-detail-list">
 					<li>
@@ -410,6 +419,36 @@
 	<script src="../../js/echarts.min.js"></script>
 	<script src="../../js/jquery-1.8.2.min.js"></script>
 	<script>
+		$(function(){
+			$('.dataList .dataItem').click(function(){
+				$('.dialog').toggleClass('dia-show')
+			})
+			$('.dialog').click(function(){
+				$(this).removeClass('dia-show')
+			})
+			$('.currentState').click(function(){
+				$('.mainContentBottom li').removeClass('active');
+				$(this).addClass('active');
+				$('.mainContentLeft').removeClass('hide');
+				$('.mainContentRight').removeClass('hide');
+			})
+			$('.alertMan').click(function(){
+				$('.mainContentBottom li').removeClass('active');
+				$(this).addClass('active');
+				$('.mainContentLeft').addClass('hide');
+				$('.mainContentRight').addClass('hide');
+			})
+			$('.taskMan').click(function(){
+				$('.mainContentBottom li').removeClass('active');
+				$(this).addClass('active');
+				$('.mainContentLeft').addClass('hide');
+				$('.mainContentRight').addClass('hide');
+			})
+		})
+
+
+
+
 		var t = null;
 	    time();
 
@@ -434,6 +473,7 @@
 	<script>
 		var myChart1 = echarts.init(document.getElementById('chart1'));
 		var myChart2 = echarts.init(document.getElementById('chart2'));
+		var myChart3 = echarts.init(document.getElementById('chart3'));
 		var option1 = {
 		   // tooltip : {
 		   //     trigger: 'item',
@@ -581,8 +621,131 @@
 		    ]
 		};
 
+		var option3 = {
+		    backgroundColor: '#ffffff',
+		    toolbox: {
+		        show: true,
+		        feature: {
+		            restore: {
+		                show: true
+		            },
+		            saveAsImage: {
+		                show: true,
+		                title:'保存'
+		            }
+		        }
+		    },
+		    tooltip: {
+		        trigger: 'axis',
+		        axisPointer: {
+		            lineStyle: {
+		                color: '#15f0f8'
+		            }
+		        }
+		    },
+		    grid: {
+		        left: '3%',
+		        right: '4%',
+		        bottom: '3%',
+		        containLabel: true
+		    },
+		    xAxis: [{
+		        type: 'category',
+		        boundaryGap: false,
+		        axisLine: {
+		            lineStyle: {
+		                color: '#57617B'
+		            }
+		        },
+		        splitLine: {
+		            show:true,
+		            lineStyle: {
+		                color: '#57617B',
+		                type: 'dashed'
+		            }
+		        },
+		        data: ['06:55', '07:55', '08:55', '09:55', '10:55', '11:55', '12:55', '13:55', '14:55', '15:55', '16:55']
+		    }, {
+		        axisPointer: {
+		            show: false
+		        },
+		        axisLine: {
+		            lineStyle: {
+		                color: '#57617B'
+		            }
+		        },
+		        axisTick: {
+		            show: false
+		        },
+
+		        position: 'bottom',
+		        offset: 20,
+		        data: ['', '', '', '', '', '', '', '', '', '']
+		    }],
+		    yAxis: [{
+		        type: 'value',
+		        name: '功率（W）',
+		        axisTick: {
+		            show: false
+		        },
+		        axisLine: {
+		            lineStyle: {
+		                color: '#57617B',
+		            }
+		        },
+		        axisLabel: {
+		            margin: 10,
+		            textStyle: {
+		                fontSize: 14
+		            }
+		        },
+		        splitLine: {
+		            lineStyle: {
+		                color: '#57617B',
+		                type: 'dashed'
+		            }
+		        }
+		    }],
+		    series: [{
+		        name: '功率',
+		        type: 'line',
+		        smooth: true,
+		        symbol: 'circle',
+		        symbolSize: 5,
+		        showSymbol: false,
+		        lineStyle: {
+		            normal: {
+		                width: 1
+		            }
+		        },
+		        areaStyle: {
+		            normal: {
+		                color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
+		                    offset: 0,
+		                    color: 'rgba(57, 83, 121, 1)'
+		                }, {
+		                    offset: 0.8,
+		                    color: 'rgba(57, 83, 121, 1)'
+		                }], false),
+		                shadowColor: 'rgba(57, 83, 121, 1)',
+		                shadowBlur: 10
+		            }
+		        },
+		        itemStyle: {
+		            normal: {
+		                color: 'rgb(57, 83, 121)',
+		                borderColor: 'rgba(0,136,212,0.2)',
+		                borderWidth: 12
+
+		            }
+		        },
+		        data: [1200, 3100, 2125, 1845, 2122, 3165, 2122, 3220, 1582, 1910, 3134]
+		    }]
+		};
+
 		myChart1.setOption(option1)
 		myChart2.setOption(option2)
+		myChart3.setOption(option3)
 	</script>
 </body>
 </html>

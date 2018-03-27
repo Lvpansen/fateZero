@@ -12,6 +12,9 @@ select:focus{
 	border: none;
 	outline: none;
 }
+.hide{
+	display: none;
+}
 iframe{
 	width:100%;
 	height: 100%;
@@ -365,10 +368,17 @@ iframe{
 	width:100%;
 	height: 100%;
 	background-color: rgba(0,0,0,0.5);
+	z-index: -1;
+	opacity: 0;
+	/*display: none;*/
+}
+.dia-show{
+	display: block;
 	z-index: 999;
+	opacity: 1;
 }
 .dialog .dialogContent{
-	width:70%;
+	width:55%;
 	/*height: 200px;*/
 	position: absolute;
 	top:50%;
@@ -425,8 +435,43 @@ iframe{
 	display: inline-block;
 	width:27px;
 	height: 37px;
-	border:1px solid #333;
+	/*border:1px solid #333;*/
 	margin-right: 6px;
+	background: no-repeat center center;
+	background-size: contain;
+}
+.dia-nav li:nth-of-type(1)>div:before{
+	background-image: url(../img/icon/maintain-icon/dialog-icon1.png);
+}
+.dia-nav li:nth-of-type(2)>div:before{
+	background-image: url(../img/icon/maintain-icon/dialog-icon2.png);
+}
+.dia-nav li:nth-of-type(3)>div:before{
+	background-image: url(../img/icon/maintain-icon/dialog-icon3.png);
+}
+.dia-nav li:nth-of-type(4)>div:before{
+	background-image: url(../img/icon/maintain-icon/dialog-icon4.png);
+}
+.dia-main{
+	width:100%;
+}
+.dia-main select{
+	border:none;
+	font-size: 24px;
+}
+#chart3{
+	width:100%;
+	height: 360px;
+}
+.dia-main .chartName{
+	text-align: center;
+	position: relative;
+}
+.dia-main .chartName .timeSelect{
+	position: absolute;
+	left:48px;
+	border:1px solid #999;
+	padding:4px;
 }
 
 .dia-detail-list{
@@ -436,7 +481,7 @@ iframe{
 }
 .dia-detail-list>li{
 	background-color: #f8f8f8;
-	min-height: 200px;
+	/*min-height: 150px;*/
 	flex-basis: 32%;
 }
 .dia-detail-list li h3{
@@ -446,6 +491,9 @@ iframe{
 	font-size: 16px;
 	padding-left: 12px;
 	border-bottom: 1px solid #999;
+}
+.dia-detail-list>li img{
+	height: 160px;
 }
 
 .weather{
@@ -462,7 +510,9 @@ iframe{
 	width:60px;
 	height: 60px;
 	display: inline-block;
-	border:1px solid #999;
+	/*border:1px solid #999;*/
+	background: url(../img/icon/maintain-icon/dialog-icon5.png) no-repeat center center;
+	background-size: contain;
 }
 .weatherDetail p{
 	font-size: 14px;
@@ -489,7 +539,22 @@ iframe{
 	vertical-align: middle;
 	content: '';
 	display: inline-block;
-	height: 22px;
-	width:22px;
-	border:1px solid #999;
+	height: 21px;
+	width:21px;
+	margin-right: 4px;
+	/*border:1px solid #999;*/
+	background: no-repeat center center;
+	background-size: contain;
+}
+.saveItems li:nth-of-type(1) .saveItemName:before{
+	background-image: url(../img/icon/maintain-icon/dialog-icon6.png);
+}
+.saveItems li:nth-of-type(2) .saveItemName:before{
+	background-image: url(../img/icon/maintain-icon/dialog-icon7.png);
+}
+.saveItems li:nth-of-type(3) .saveItemName:before{
+	background-image: url(../img/icon/maintain-icon/dialog-icon8.png);
+}
+.saveItems li:nth-of-type(4) .saveItemName:before{
+	background-image: url(../img/icon/maintain-icon/dialog-icon9.png);
 }
